@@ -11,7 +11,19 @@
 		6FA09D481D9E6FDA00EDCA64 /* SRGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D451D9E6FDA00EDCA64 /* SRGLogger.m */; };
 		6FA09D4B1D9E70ED00EDCA64 /* NSBundle+SRGLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FA09D491D9E70ED00EDCA64 /* NSBundle+SRGLogger.h */; };
 		6FA09D4C1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D4A1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m */; };
+		6FA09D6B1D9E85BC00EDCA64 /* SRGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */; };
+		6FA09D761D9E861600EDCA64 /* LoggerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6FA09D6C1D9E85BC00EDCA64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FA09D2D1D9E6F8900EDCA64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FA09D351D9E6F8900EDCA64;
+			remoteInfo = SRGLogger;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRGLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +32,9 @@
 		6FA09D451D9E6FDA00EDCA64 /* SRGLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRGLogger.m; sourceTree = "<group>"; };
 		6FA09D491D9E70ED00EDCA64 /* NSBundle+SRGLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SRGLogger.h"; sourceTree = "<group>"; };
 		6FA09D4A1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SRGLogger.m"; sourceTree = "<group>"; };
+		6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRGLogger-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FA09D721D9E861600EDCA64 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +45,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6FA09D631D9E85BC00EDCA64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FA09D6B1D9E85BC00EDCA64 /* SRGLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				6FA09D411D9E6FDA00EDCA64 /* Framework */,
+				6FA09D711D9E861600EDCA64 /* Tests */,
 				6FA09D371D9E6F8900EDCA64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */,
+				6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +90,23 @@
 				6FA09D4A1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m */,
 				6FA09D441D9E6FDA00EDCA64 /* SRGLogger.h */,
 				6FA09D451D9E6FDA00EDCA64 /* SRGLogger.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6FA09D711D9E861600EDCA64 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6FA09D721D9E861600EDCA64 /* Info.plist */,
+				6FA09D731D9E861600EDCA64 /* Sources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		6FA09D731D9E861600EDCA64 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -102,6 +144,24 @@
 			productReference = 6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		6FA09D651D9E85BC00EDCA64 /* SRGLogger-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FA09D6E1D9E85BC00EDCA64 /* Build configuration list for PBXNativeTarget "SRGLogger-tests" */;
+			buildPhases = (
+				6FA09D621D9E85BC00EDCA64 /* Sources */,
+				6FA09D631D9E85BC00EDCA64 /* Frameworks */,
+				6FA09D641D9E85BC00EDCA64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FA09D6D1D9E85BC00EDCA64 /* PBXTargetDependency */,
+			);
+			name = "SRGLogger-tests";
+			productName = "SRGLogger-tests";
+			productReference = 6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -113,6 +173,10 @@
 				ORGANIZATIONNAME = "SRG SSR";
 				TargetAttributes = {
 					6FA09D351D9E6F8900EDCA64 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					6FA09D651D9E85BC00EDCA64 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -132,12 +196,20 @@
 			projectRoot = "";
 			targets = (
 				6FA09D351D9E6F8900EDCA64 /* SRGLogger */,
+				6FA09D651D9E85BC00EDCA64 /* SRGLogger-tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6FA09D341D9E6F8900EDCA64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FA09D641D9E85BC00EDCA64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -156,7 +228,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6FA09D621D9E85BC00EDCA64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FA09D761D9E861600EDCA64 /* LoggerTestCase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6FA09D6D1D9E85BC00EDCA64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FA09D351D9E6F8900EDCA64 /* SRGLogger */;
+			targetProxy = 6FA09D6C1D9E85BC00EDCA64 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6FA09D3C1D9E6F8900EDCA64 /* Debug */ = {
@@ -291,6 +379,26 @@
 			};
 			name = Release;
 		};
+		6FA09D6F1D9E85BC00EDCA64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6FA09D701D9E85BC00EDCA64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -311,6 +419,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		6FA09D6E1D9E85BC00EDCA64 /* Build configuration list for PBXNativeTarget "SRGLogger-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FA09D6F1D9E85BC00EDCA64 /* Debug */,
+				6FA09D701D9E85BC00EDCA64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

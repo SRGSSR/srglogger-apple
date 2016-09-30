@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6FA09D651D9E85BC00EDCA64"
+               BuildableName = "SRGLogger-tests.xctest"
+               BlueprintName = "SRGLogger-tests"
+               ReferencedContainer = "container:SRGLogger.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6FA09D351D9E6F8900EDCA64"
+            BuildableName = "SRGLogger.framework"
+            BlueprintName = "SRGLogger"
+            ReferencedContainer = "container:SRGLogger.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
