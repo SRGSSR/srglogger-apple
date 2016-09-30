@@ -51,7 +51,7 @@ typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NS
  *
  *  ## Logging
  *
- *  To log a message, call the macro matching the needed level. You should provide an optional subsystem (identifying 
+ *  To log a message, call the macro matching the desired level. You should provide an optional subsystem (identifying
  *  your library or application) and / or category (identifying to which part of the code the log is related):
  *
  *  SRGLogInfo(@"com.myapp", @"Weather", @"The temperature is %@", @(temperature));
@@ -63,19 +63,19 @@ typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NS
  *  ## Interfacing with other loggers
  *
  *  If the default log handler does not suit your needs (or if you simply want to inhibit logging), call the `+setLogHandler`
- *  method to set a new handler (or `nil`). Then implement the handler block to somehow forward the messages and contextual 
- *  information to your logger.
+ *  method to set a new handler (or `nil`). Then implement the handler block to forward the messages and contextual
+ *  information to your other logger.
  *
  *  ## Defining convenience macros in your application or library
  *
  *  To avoid specifiying the subsystem in your application or library each time you call the macro, you can define you
  *  own set of macros which always set this value consistently, for example:
  *
- *  #define SRGMyAppLogVerbose(category, format, ...) SRGLogVerbose(@"com.myapp", category, format, ##__VA_ARGS__)
- *  #define SRGMyAppLogDebug(category, format, ...)   SRGLogDebug(@"com.myapp", category, format, ##__VA_ARGS__)
- *  #define SRGMyAppLogInfo(category, format, ...)    SRGLogInfo(@"com.myapp", category, format, ##__VA_ARGS__)
- *  #define SRGMyAppLogWarning(category, format, ...) SRGLogWarning(@"com.myapp", category, format, ##__VA_ARGS__)
- *  #define SRGMyAppLogError(category, format, ...)   SRGLogError(@"com.myapp", category, format, ##__VA_ARGS__)
+ *  #define MyAppLogVerbose(category, format, ...) SRGLogVerbose(@"com.myapp", category, format, ##__VA_ARGS__)
+ *  #define MyAppLogDebug(category, format, ...)   SRGLogDebug(@"com.myapp", category, format, ##__VA_ARGS__)
+ *  #define MyAppLogInfo(category, format, ...)    SRGLogInfo(@"com.myapp", category, format, ##__VA_ARGS__)
+ *  #define MyAppLogWarning(category, format, ...) SRGLogWarning(@"com.myapp", category, format, ##__VA_ARGS__)
+ *  #define MyAppLogError(category, format, ...)   SRGLogError(@"com.myapp", category, format, ##__VA_ARGS__)
  *
  *  You can of course proceed similarly for categories if needed.
  *
