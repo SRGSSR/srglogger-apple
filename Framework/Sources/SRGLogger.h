@@ -56,7 +56,7 @@ typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NS
  *
  *  This information is forwarded to a log handler, which is a global block through which logging requests are sent. By
  *  default this handler sends messages to [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack) if found
- *  at runtime, otherwise to Apple Unified logging or, if not available, to `NSLog` (only warning and errors).
+ *  at runtime, otherwise to Apple Unified logging or, if not available, to `NSLog` (only warnings and errors).
  *
  *  ## Interfacing with other loggers
  *

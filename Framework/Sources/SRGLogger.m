@@ -10,6 +10,7 @@
 
 #import <os/log.h>
 
+// DDLog levels
 typedef NS_OPTIONS(NSUInteger, SRGLogger_DDLogFlag){
     SRGLogger_DDLogFlagError = (1 << 0),
     SRGLogger_DDLogFlagWarning = (1 << 1),
@@ -18,7 +19,7 @@ typedef NS_OPTIONS(NSUInteger, SRGLogger_DDLogFlag){
     SRGLogger_DDLogFlagVerbose = (1 << 4)
 };
 
-// DDLog interface
+// DDLog interface excerpt
 @protocol SRGLogger_DDLog
 
 + (void)log:(BOOL)asynchronous message:(NSString *)message level:(NSUInteger)level flag:(NSUInteger)flag context:(NSInteger)context file:(const char *)file function:(const char *)function line:(NSUInteger)line tag:(id)tag;
@@ -101,14 +102,21 @@ static SRGLogHandler s_unifiedLoggingHandler = ^(NSString *(^message)(void), SRG
 static SRGLogHandler s_NSLogHandler = ^(NSString *(^message)(void), SRGLogLevel level, NSString * const subsystem, NSString * const category, const char *file, const char *function, NSUInteger line)
 {
     if (level == SRGLogLevelError || level == SRGLogLevelWarning) {
+        static NSDictionary<NSNumber *, NSString *> *s_levelNames;
+        static dispatch_once_t s_onceToken;
+        dispatch_once(&s_onceToken, ^{
+            s_levelNames = @{ @(SRGLogLevelWarning) : @"WARN",
+                              @(SRGLogLevelError) : @"ERROR" };
+        });
+        
         if (subsystem && category) {
-            NSLog(@"[%@|%@] %@", subsystem, category, message());
+            NSLog(@"[%@] (%@|%@) %@", s_levelNames[@(level)], subsystem, category, message());
         }
         else if (subsystem) {
-            NSLog(@"[%@] %@", subsystem, message());
+            NSLog(@"[%@] (%@) %@", s_levelNames[@(level)], subsystem, message());
         }
         else if (category) {
-            NSLog(@"(%@) %@", category, message());
+            NSLog(@"[%@] (%@) %@", s_levelNames[@(level)], category, message());
         }
         else {
             NSLog(@"%@", message());
