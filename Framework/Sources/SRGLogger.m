@@ -13,29 +13,37 @@ NSString *SRGLoggerMarketingVersion(void)
     return [NSBundle srg_loggerBundle].infoDictionary[@"CFBundleShortVersionString"];
 }
 
-static SRGLogHandler s_logHandler = ^(NSString *(^message)(void), SRGLogLevel level, const char *subsystem, const char *category, const char *file, const char *function, NSUInteger line)
+static SRGLogHandler s_logHandler = ^(NSString *(^message)(void), SRGLogLevel level, NSString * const subsystem, NSString * const category, const char *file, const char *function, NSUInteger line)
 {
     if (level == SRGLogLevelError || level == SRGLogLevelWarning) {
-        if (category) {
-            NSLog(@"[%s|%s] %@", subsystem, category, message());
+        if (subsystem && category) {
+            NSLog(@"[%@|%@] %@", subsystem, category, message());
+        }
+        else if (subsystem) {
+            NSLog(@"[%@] %@", subsystem, message());
+        }
+        else if (category) {
+            NSLog(@"(%@) %@", category, message());
         }
         else {
-            NSLog(@"[%s] %@", subsystem, message());
+            NSLog(@"%@", message());
         }
     }
 };
 
 @implementation SRGLogger
 
-+ (void)setLogHandler:(SRGLogHandler)logHandler
++ (SRGLogHandler)setLogHandler:(SRGLogHandler)logHandler
 {
+    SRGLogHandler previousHandler = s_logHandler;
     s_logHandler = logHandler;
+    return previousHandler;
 }
 
 + (void)logMessage:(NSString * (^)(void))message
              level:(SRGLogLevel)level
-         subsystem:(const char *)subsystem
-          category:(const char *)category
+         subsystem:(NSString * const)subsystem
+          category:(NSString * const)category
               file:(const char *)file
           function:(const char *)function
               line:(NSUInteger)line
