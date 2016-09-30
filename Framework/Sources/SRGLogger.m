@@ -110,7 +110,7 @@ static SRGLogHandler s_unifiedLoggingHandler = ^(NSString *(^message)(void), SRG
     // If the os_log_t already exists, it is simply reused. No bookkeeping must be made on our side,
     // therefore no thread-safety issues to fear
     os_log_t log = os_log_create(subsystem.UTF8String, category.UTF8String);
-    os_log_with_type(log, type, "%@", message());
+    os_log_with_type(log, type, "%{public}@", message());
 };
 
 static SRGLogHandler s_NSLogHandler = ^(NSString *(^message)(void), SRGLogLevel level, NSString * const subsystem, NSString * const category, const char *file, const char *function, NSUInteger line)

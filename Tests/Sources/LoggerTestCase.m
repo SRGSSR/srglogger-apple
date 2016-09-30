@@ -17,6 +17,13 @@
 {
     SRGLogError(@"ch.srgssr.logger-tests", @"Test", @"Error!");
     SRGLogWarning(@"ch.srgssr.logger-tests", @"Test", @"Warning!");
+    
+    SRGLogError(@"ch.srgssr.logger-tests", @"Test", @"Error with string %@", @"'test'");
+    
+    NSString *string = [NSString stringWithFormat:@"%@", NSStringFromClass([self class])];
+    SRGLogError(@"ch.srgssr.logger-tests", @"Test", @"Error with string %@", string);
+    
+    SRGLogError(@"ch.srgssr.logger-tests", @"Test", @"Error with dictionary %@", @{ @"key" : @"value" });
 }
 
 @end
