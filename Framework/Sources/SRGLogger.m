@@ -59,7 +59,21 @@ static SRGLogHandler s_cocoaLumberjackHandler = ^(NSString *(^message)(void), SR
         }
     }
     
-    [NSClassFromString(@"DDLog") log:YES message:message() level:NSUIntegerMax flag:flag context:0 file:file function:function line:line tag:nil];
+    // Display the subsystem and the category directly in the message
+    NSString *fullMessage = nil;
+    if (subsystem && category) {
+        fullMessage = [NSString stringWithFormat:@"(%@|%@) %@", subsystem, category, message()];
+    }
+    else if (subsystem) {
+        fullMessage = [NSString stringWithFormat:@"(%@) %@", subsystem, message()];
+    }
+    else if (category) {
+        fullMessage = [NSString stringWithFormat:@"(%@) %@", category, message()];
+    }
+    else {
+        fullMessage = message();
+    }
+    [NSClassFromString(@"DDLog") log:YES message:fullMessage level:NSUIntegerMax flag:flag context:0 file:file function:function line:line tag:nil];
 };
 
 static SRGLogHandler s_unifiedLoggingHandler = ^(NSString *(^message)(void), SRGLogLevel level, NSString * const subsystem, NSString * const category, const char *file, const char *function, NSUInteger line)
