@@ -6,6 +6,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 // Framework standard version number
 FOUNDATION_EXPORT double SRGLoggerVersionNumber;
 FOUNDATION_EXPORT const unsigned char SRGLoggerVersionString[];
@@ -40,7 +42,7 @@ typedef NS_ENUM(NSUInteger, SRGLogLevel) {
 };
 
 // Block signatures
-typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NSString * const subsystem, NSString * const category, const char *file, const char *function, NSUInteger line);
+typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NSString * _Nullable const subsystem, NSString * _Nullable const category, const char *file, const char *function, NSUInteger line);
 
 /**
  *  `SRGLogger` is a small generic logging facility. It can be used by all SSRG SSR apps and libraries to provide for a consistent
@@ -90,7 +92,7 @@ typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NS
  *  @param logHandler The new log handler
  *  @return The previously installed log handler
  */
-+ (SRGLogHandler)setLogHandler:(SRGLogHandler)logHandler;
++ (nullable SRGLogHandler)setLogHandler:(nullable SRGLogHandler)logHandler;
 
 /**
  *  Log a message. Not meant to be called directly, use macros below instead
@@ -105,8 +107,8 @@ typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NS
  */
 + (void)logMessage:(NSString * (^)(void))message
              level:(SRGLogLevel)level
-         subsystem:(NSString * const)subsystem
-          category:(NSString * const)category
+         subsystem:(nullable NSString * const)subsystem
+          category:(nullable NSString * const)category
               file:(const char *)file
           function:(const char *)function
               line:(NSUInteger)line;
@@ -126,3 +128,5 @@ typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NS
 #define SRGLogInfo(subsystem, category, format, ...)    SRGLog(subsystem, category, SRGLogLevelInfo,    (^{ return [NSString stringWithFormat:(format), ##__VA_ARGS__]; }))
 #define SRGLogWarning(subsystem, category, format, ...) SRGLog(subsystem, category, SRGLogLevelWarning, (^{ return [NSString stringWithFormat:(format), ##__VA_ARGS__]; }))
 #define SRGLogError(subsystem, category, format, ...)   SRGLog(subsystem, category, SRGLogLevelError,   (^{ return [NSString stringWithFormat:(format), ##__VA_ARGS__]; }))
+
+NS_ASSUME_NONNULL_END
