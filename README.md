@@ -98,9 +98,9 @@ If the default log handler does not suit your needs (or if you simply want to in
 
 If you are using Apple unified logging and do not see the logs:
 
-1. Check that the scheme you use does not have the `OS_ACTIVITY_MODE` set to `disable`. This is a common trick to avoid the apparent mess in Xcode console, but this mess is the log you must now read and filter in the `Console.app`
-1. If you do not see lower level logs in the `Console.app`, ensure that the items _Include Info Messages_ and `Include Debug Messages` are checked in the `Action` menu
-1. Use the search to search for your application name and right-click on an associated log entry to filter by application, subsystem or category
+1. Check that the scheme you use does not have the `OS_ACTIVITY_MODE` environment variable set to `disable`, or `OS_ACTIVITY_DT_MODE` set to `NO`. This is a common trick to avoid the apparent mess in Xcode console, but this mess is the log you can now read and filter in the `Console.app`
+1. If you do not see lower level logs in the `Console.app`, ensure that the items _Include Info Messages_ and `Include Debug Messages` are checked in the console `Action` menu
+1. Use the search to locate entries for your application name, and right-click on an entry to filter by application, subsystem or category
 1. Read the [official documentation](https://developer.apple.com/reference/os/1891852-logging) if you still have issues
 
 ## Credits
