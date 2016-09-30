@@ -108,6 +108,7 @@
 		6FA09D2D1D9E6F8900EDCA64 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SRG;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "SRG SSR";
 				TargetAttributes = {
@@ -123,6 +124,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 6FA09D2C1D9E6F8900EDCA64;
 			productRefGroup = 6FA09D371D9E6F8900EDCA64 /* Products */;
@@ -266,7 +268,7 @@
 				INFOPLIST_FILE = Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SRG.SRGLogger;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.srgssr.SRGLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -283,7 +285,7 @@
 				INFOPLIST_FILE = Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SRG.SRGLogger;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.srgssr.SRGLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
