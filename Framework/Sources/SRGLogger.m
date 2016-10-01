@@ -118,7 +118,10 @@ static SRGLogHandler s_NSLogHandler = ^(NSString *(^message)(void), SRGLogLevel 
     static NSDictionary<NSNumber *, NSString *> *s_levelNames;
     static dispatch_once_t s_onceToken;
     dispatch_once(&s_onceToken, ^{
-        s_levelNames = @{ @(SRGLogLevelWarning) : @"WARN",
+        s_levelNames = @{ @(SRGLogLevelWarning) : @"VERB",
+                          @(SRGLogLevelWarning) : @"DEBUG",
+                          @(SRGLogLevelWarning) : @"INFO",
+                          @(SRGLogLevelWarning) : @"WARN",
                           @(SRGLogLevelError) : @"ERROR" };
     });
     
