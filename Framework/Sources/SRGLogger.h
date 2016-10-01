@@ -45,6 +45,25 @@ typedef NS_ENUM(NSUInteger, SRGLogLevel) {
 typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NSString * _Nullable const subsystem, NSString * _Nullable const category, const char *file, const char *function, NSUInteger line);
 
 /**
+ *  @name Built-in log handlers
+ */
+
+/**
+ *  CocoaLumberjack handler. Return nil if CocoaLumberjack is not available at runtime
+ */
+OBJC_EXTERN SRGLogHandler _Nullable SRGCocoaLumberjackHandler(void);
+
+/**
+ *  Apple unified logging handler. Return nil on non-supported platforms (< iOS 10)
+ */
+OBJC_EXTERN SRGLogHandler _Nullable SRGUnifiedLoggingHandler(void);
+
+/**
+ *  NSLog-based handler. Always available
+ */
+OBJC_EXTERN SRGLogHandler SRGNSLogHandler(void);
+
+/**
  *  `SRGLogger` is a small generic logging facility. It can be used by all SSRG SSR apps and libraries to provide for a consistent
  *  way of logging and interfacing with logging frameworks like [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack)
  *  or [Apple unified logging](https://developer.apple.com/reference/os/1891852-logging), for example.
@@ -65,6 +84,10 @@ typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NS
  *  If the default log handler does not suit your needs (or if you simply want to inhibit logging), call the `+setLogHandler`
  *  method to set a new handler (or `nil`). Then implement the handler block to forward the messages and contextual
  *  information to your other logger.
+ *
+ *  The standard CocoLumberjack, Unified logging and `NSLog` handlers are available publicly (@see Built-in log handlers).
+ *  You can force the use of one of them using `+setLogHandler:` if you want (provided it is available, otherwise logging
+ *  will be disabled).
  *
  *  ## Defining convenience macros in your application or library
  *
