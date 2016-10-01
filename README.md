@@ -18,7 +18,7 @@ The library automatically bridges with standard logging frameworks, in the follo
 
 * If your project uses [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack), messages will be forwarded to it
 * If your project can use [Apple unified logging](https://developer.apple.com/reference/os/1891852-logging), available starting from iOS 10, messages will be forwarded to the system console
-* Otherwise messages will be forwarded to `NSLog`. Since `NSLog` does not allow level-based filtering, only errors and warnings will be forwarded
+* Otherwise messages will be forwarded to `NSLog`. Since `NSLog` does not allow level-based filtering, all messages will be displayed
 
 The library does not provide any logging to [NSLogger](https://github.com/fpillet/NSLogger). You can namely automatically bridge CocoaLumberjack into NSLogger using [Cédric Luthi's interface](https://github.com/0xced/XCDLumberjackNSLogger) between them.
 

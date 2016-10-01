@@ -115,26 +115,24 @@ static SRGLogHandler s_unifiedLoggingHandler = ^(NSString *(^message)(void), SRG
 
 static SRGLogHandler s_NSLogHandler = ^(NSString *(^message)(void), SRGLogLevel level, NSString * const subsystem, NSString * const category, const char *file, const char *function, NSUInteger line)
 {
-    if (level == SRGLogLevelError || level == SRGLogLevelWarning) {
-        static NSDictionary<NSNumber *, NSString *> *s_levelNames;
-        static dispatch_once_t s_onceToken;
-        dispatch_once(&s_onceToken, ^{
-            s_levelNames = @{ @(SRGLogLevelWarning) : @"WARN",
-                              @(SRGLogLevelError) : @"ERROR" };
-        });
-        
-        if (subsystem && category) {
-            NSLog(@"[%@] (%@|%@) %@", s_levelNames[@(level)], subsystem, category, message());
-        }
-        else if (subsystem) {
-            NSLog(@"[%@] (%@) %@", s_levelNames[@(level)], subsystem, message());
-        }
-        else if (category) {
-            NSLog(@"[%@] (%@) %@", s_levelNames[@(level)], category, message());
-        }
-        else {
-            NSLog(@"%@", message());
-        }
+    static NSDictionary<NSNumber *, NSString *> *s_levelNames;
+    static dispatch_once_t s_onceToken;
+    dispatch_once(&s_onceToken, ^{
+        s_levelNames = @{ @(SRGLogLevelWarning) : @"WARN",
+                          @(SRGLogLevelError) : @"ERROR" };
+    });
+    
+    if (subsystem && category) {
+        NSLog(@"[%@] (%@|%@) %@", s_levelNames[@(level)], subsystem, category, message());
+    }
+    else if (subsystem) {
+        NSLog(@"[%@] (%@) %@", s_levelNames[@(level)], subsystem, message());
+    }
+    else if (category) {
+        NSLog(@"[%@] (%@) %@", s_levelNames[@(level)], category, message());
+    }
+    else {
+        NSLog(@"%@", message());
     }
 };
 
