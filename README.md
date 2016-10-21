@@ -18,7 +18,8 @@ The library automatically bridges with standard logging frameworks, in the follo
 
 * If your project uses [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack), messages will be forwarded to it
 * If your project can use [Apple unified logging](https://developer.apple.com/reference/os/1891852-logging), available starting from iOS 10, messages will be forwarded to the system console
-* Otherwise messages will be forwarded to `NSLog`. Since `NSLog` does not allow level-based filtering, all messages will be displayed
+
+If neither is available, no logging will take place. You can install a verbose `NSLog` based logger, provided as well, if you need a quick way to setup logging (this logger logs all messages and can slow down your application).
 
 The library does not provide any logging to [NSLogger](https://github.com/fpillet/NSLogger). You can namely automatically bridge CocoaLumberjack into NSLogger using [Cédric Luthi's interface](https://github.com/0xced/XCDLumberjackNSLogger) between them.
 
@@ -40,7 +41,7 @@ For more information about Carthage and its use, refer to the [official document
 
 ## Usage
 
-When you want to classes or functions provided by the library in your code, you must import it from your source files first.
+When you want to use classes or functions provided by the library in your code, you must import it from your source files first.
 
 ### Usage from Objective-C source files
 

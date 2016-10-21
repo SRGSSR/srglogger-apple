@@ -195,8 +195,6 @@ __attribute__((constructor)) static void SRGLoggerInit(void)
     if (s_logHandler) {
         return;
     }
-    
-    s_logHandler = SRGNSLogHandler();
 }
 
 NSString *SRGLoggerMarketingVersion(void)

@@ -71,23 +71,25 @@ OBJC_EXTERN SRGLogHandler SRGNSLogHandler(void);
  *  ## Logging
  *
  *  To log a message, call the macro matching the desired level. You should provide an optional subsystem (identifying
- *  your library or application) and / or category (identifying to which part of the code the log is related):
+ *  your library or application) and / or category (identifying to which part of the code the log is related), e.g.
  *
  *  SRGLogInfo(@"com.myapp", @"Weather", @"The temperature is %@", @(temperature));
  *
  *  This information is forwarded to a log handler, which is a global block through which logging requests are sent. By
  *  default this handler sends messages to [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack) if found
- *  at runtime, otherwise to Apple Unified logging or, if not available, to `NSLog` (logs everything).
+ *  at runtime, otherwise to Apple Unified logging. If neither is found, no loggging will take place. You can use a built-in
+ *  `NSLog` based logger by calling `+setLogHandler:` with `SRGNSLogHandler` as parameter if you need a quick way to setup
+ *  a logger. Be careful, though, as this logger logs everything (and thus can be quite verbose and slow down your application).
  *
  *  ## Interfacing with other loggers
  *
- *  If the default log handler does not suit your needs (or if you simply want to inhibit logging), call the `+setLogHandler`
+ *  If the default log handler does not suit your needs (or if you simply want to inhibit logging), call the `+setLogHandler:`
  *  method to set a new handler (or `nil`). Then implement the handler block to forward the messages and contextual
  *  information to your other logger.
  *
  *  The standard CocoLumberjack, Unified logging and `NSLog` handlers are available publicly (@see Built-in log handlers).
- *  You can force the use of one of them using `+setLogHandler:` if you want (provided it is available, otherwise logging
- *  will be disabled).
+ *  You can force the use of one of them using `+setLogHandler:` if you want (provided the logger actually is available, 
+ *  otherwise logging will be disabled).
  *
  *  ## Defining convenience macros in your application or library
  *
@@ -113,6 +115,7 @@ OBJC_EXTERN SRGLogHandler SRGNSLogHandler(void);
  *  Call to replace the current log handler
  *
  *  @param logHandler The new log handler
+ *
  *  @return The previously installed log handler
  */
 + (nullable SRGLogHandler)setLogHandler:(nullable SRGLogHandler)logHandler;
