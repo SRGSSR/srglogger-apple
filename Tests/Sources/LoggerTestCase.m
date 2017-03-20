@@ -7,6 +7,8 @@
 #import <SRGLogger/SRGLogger.h>
 #import <XCTest/XCTest.h>
 
+#define TestLogError(category, format, ...)   SRGLogError(@"ch.srgssr.logger-tests", category, format, ##__VA_ARGS__)
+
 @interface LoggerTestCase : XCTestCase
 
 @end
@@ -21,6 +23,8 @@
     NSString *string = @"Hello, World!";
     SRGLogError(@"ch.srgssr.logger-tests", @"Test", @"Error with string '%@'", string);
     SRGLogError(@"ch.srgssr.logger-tests", @"Test", @"Error with dictionary %@", @{ @"key" : @"value" });
+    
+    TestLogError(@"Test", @"Error!");
 }
 
 @end
