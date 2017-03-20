@@ -15,6 +15,7 @@
 		6FA09D761D9E861600EDCA64 /* LoggerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */; };
 		6FD5F8881E7FEA570030C896 /* SRGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD5F8871E7FEA570030C896 /* SRGLogger.swift */; };
 		6FD5F8891E7FEACF0030C896 /* SRGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */; };
+		6FD5F88A1E7FFE750030C896 /* SRGLogger_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEBEC941E7FE7C8003F760F /* SRGLogger_Swift.framework */; };
 		6FEBEC8E1E7FDC32003F760F /* LoggerSwiftTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBEC8C1E7FDC00003F760F /* LoggerSwiftTestCase.swift */; };
 		6FEBECA31E7FE8EB003F760F /* SRGLogger_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FEBECA21E7FE8EB003F760F /* SRGLogger_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FD5F88A1E7FFE750030C896 /* SRGLogger_Swift.framework in Frameworks */,
 				6FA09D6B1D9E85BC00EDCA64 /* SRGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
