@@ -13,7 +13,10 @@
 		6FA09D4C1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D4A1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m */; };
 		6FA09D6B1D9E85BC00EDCA64 /* SRGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */; };
 		6FA09D761D9E861600EDCA64 /* LoggerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */; };
+		6FD5F8881E7FEA570030C896 /* SRGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD5F8871E7FEA570030C896 /* SRGLogger.swift */; };
+		6FD5F8891E7FEACF0030C896 /* SRGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */; };
 		6FEBEC8E1E7FDC32003F760F /* LoggerSwiftTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBEC8C1E7FDC00003F760F /* LoggerSwiftTestCase.swift */; };
+		6FEBECA31E7FE8EB003F760F /* SRGLogger_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FEBECA21E7FE8EB003F760F /* SRGLogger_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,11 @@
 		6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRGLogger-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA09D721D9E861600EDCA64 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerTestCase.m; sourceTree = "<group>"; };
+		6FD5F8871E7FEA570030C896 /* SRGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRGLogger.swift; sourceTree = "<group>"; };
 		6FEBEC8C1E7FDC00003F760F /* LoggerSwiftTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerSwiftTestCase.swift; sourceTree = "<group>"; };
+		6FEBEC941E7FE7C8003F760F /* SRGLogger_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRGLogger_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FEBEC9D1E7FE892003F760F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FEBECA21E7FE8EB003F760F /* SRGLogger_Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGLogger_Swift.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +62,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6FEBEC901E7FE7C8003F760F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FD5F8891E7FEACF0030C896 /* SRGLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		6FA09D2C1D9E6F8900EDCA64 = {
 			isa = PBXGroup;
 			children = (
+				6FEBEC9C1E7FE892003F760F /* Framework_Swift */,
 				6FA09D411D9E6FDA00EDCA64 /* Framework */,
 				6FA09D711D9E861600EDCA64 /* Tests */,
 				6FA09D371D9E6F8900EDCA64 /* Products */,
@@ -72,6 +88,7 @@
 			children = (
 				6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */,
 				6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */,
+				6FEBEC941E7FE7C8003F760F /* SRGLogger_Swift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +131,24 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		6FEBEC9C1E7FE892003F760F /* Framework_Swift */ = {
+			isa = PBXGroup;
+			children = (
+				6FEBEC9D1E7FE892003F760F /* Info.plist */,
+				6FEBEC9E1E7FE892003F760F /* Sources */,
+			);
+			path = Framework_Swift;
+			sourceTree = "<group>";
+		};
+		6FEBEC9E1E7FE892003F760F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6FEBECA21E7FE8EB003F760F /* SRGLogger_Swift.h */,
+				6FD5F8871E7FEA570030C896 /* SRGLogger.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -123,6 +158,14 @@
 			files = (
 				6FA09D4B1D9E70ED00EDCA64 /* NSBundle+SRGLogger.h in Headers */,
 				6FA09D471D9E6FDA00EDCA64 /* SRGLogger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FEBEC911E7FE7C8003F760F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FEBECA31E7FE8EB003F760F /* SRGLogger_Swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +208,24 @@
 			productReference = 6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6FEBEC931E7FE7C8003F760F /* SRGLogger_Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FEBEC9B1E7FE7C9003F760F /* Build configuration list for PBXNativeTarget "SRGLogger_Swift" */;
+			buildPhases = (
+				6FEBEC8F1E7FE7C8003F760F /* Sources */,
+				6FEBEC901E7FE7C8003F760F /* Frameworks */,
+				6FEBEC911E7FE7C8003F760F /* Headers */,
+				6FEBEC921E7FE7C8003F760F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SRGLogger_Swift;
+			productName = SRGLogger_Swift;
+			productReference = 6FEBEC941E7FE7C8003F760F /* SRGLogger_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -185,6 +246,11 @@
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
+					6FEBEC931E7FE7C8003F760F = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 6FA09D301D9E6F8900EDCA64 /* Build configuration list for PBXProject "SRGLogger" */;
@@ -201,6 +267,7 @@
 			projectRoot = "";
 			targets = (
 				6FA09D351D9E6F8900EDCA64 /* SRGLogger */,
+				6FEBEC931E7FE7C8003F760F /* SRGLogger_Swift */,
 				6FA09D651D9E85BC00EDCA64 /* SRGLogger-tests */,
 			);
 		};
@@ -215,6 +282,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6FA09D641D9E85BC00EDCA64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FEBEC921E7FE7C8003F760F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,6 +313,14 @@
 			files = (
 				6FA09D761D9E861600EDCA64 /* LoggerTestCase.m in Sources */,
 				6FEBEC8E1E7FDC32003F760F /* LoggerSwiftTestCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FEBEC8F1E7FE7C8003F760F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FD5F8881E7FEA570030C896 /* SRGLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +496,47 @@
 			};
 			name = Release;
 		};
+		6FEBEC991E7FE7C9003F760F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Framework_Swift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6FEBEC9A1E7FE7C9003F760F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Framework_Swift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -440,6 +563,15 @@
 			buildConfigurations = (
 				6FA09D6F1D9E85BC00EDCA64 /* Debug */,
 				6FA09D701D9E85BC00EDCA64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FEBEC9B1E7FE7C9003F760F /* Build configuration list for PBXNativeTarget "SRGLogger_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FEBEC991E7FE7C9003F760F /* Debug */,
+				6FEBEC9A1E7FE7C9003F760F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
