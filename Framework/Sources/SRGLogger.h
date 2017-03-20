@@ -8,11 +8,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-// Framework standard version number
+// Framework standard version number.
 FOUNDATION_EXPORT double SRGLoggerVersionNumber;
 FOUNDATION_EXPORT const unsigned char SRGLoggerVersionString[];
 
-// Oficial version number
+// Oficial version number.
 FOUNDATION_EXPORT NSString *SRGLoggerMarketingVersion(void);
 
 /**
@@ -20,28 +20,28 @@ FOUNDATION_EXPORT NSString *SRGLoggerMarketingVersion(void);
  */
 typedef NS_ENUM(NSUInteger, SRGLogLevel) {
     /**
-     *  Level to capture detailed technical information
+     *  Level to capture detailed technical information.
      */
     SRGLogLevelVerbose,
     /**
-     *  Level to capture information useful for debugging
+     *  Level to capture information useful for debugging.
      */
     SRGLogLevelDebug,
     /**
-     *  Level to capture information that may be helpful for troubleshooting errors
+     *  Level to capture information that may be helpful for troubleshooting errors.
      */
     SRGLogLevelInfo,
     /**
-     *  Level to capture information about conditions which might lead to a failure
+     *  Level to capture information about conditions which might lead to a failure.
      */
     SRGLogLevelWarning,
     /**
-     *  Level to capture information about failures
+     *  Level to capture information about failures.
      */
     SRGLogLevelError
 };
 
-// Block signatures
+// Block signatures.
 typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NSString * _Nullable const subsystem, NSString * _Nullable const category, const char *file, const char *function, NSUInteger line);
 
 /**
@@ -49,17 +49,17 @@ typedef void (^SRGLogHandler)(NSString * (^message)(void), SRGLogLevel level, NS
  */
 
 /**
- *  CocoaLumberjack handler. Return nil if CocoaLumberjack is not available at runtime
+ *  CocoaLumberjack handler. Return `nil` if CocoaLumberjack is not available at runtime.
  */
 OBJC_EXTERN SRGLogHandler _Nullable SRGCocoaLumberjackHandler(void);
 
 /**
- *  Apple unified logging handler. Return nil on non-supported platforms (< iOS 10)
+ *  Apple unified logging handler. Return `nil` on non-supported platforms (< iOS 10).
  */
 OBJC_EXTERN SRGLogHandler _Nullable SRGUnifiedLoggingHandler(void);
 
 /**
- *  NSLog-based handler. Always available
+ *  `NSLog`-based handler. Always available.
  */
 OBJC_EXTERN SRGLogHandler SRGNSLogHandler(void);
 
@@ -104,6 +104,12 @@ OBJC_EXTERN SRGLogHandler SRGNSLogHandler(void);
  *
  *  You can of course proceed similarly for categories if needed.
  *
+ *  ## Use from Swift code
+ *
+ *  `SRGLogger` uses macros to log contextual information (file name, line number, etc.) which cannot be used from Swift
+ *  source files. If you need to use `SRGLogger` from a Swift source file, use the functions declared by `SRGLogger_Swift`
+ *  framework and which play the same role.
+ *
  *  ## Credits
  *
  *  This implementation is entirely based on the following idea from Cédric Luthi, with minor adjustements along the way:
@@ -112,24 +118,24 @@ OBJC_EXTERN SRGLogHandler SRGNSLogHandler(void);
 @interface SRGLogger : NSObject
 
 /**
- *  Call to replace the current log handler
+ *  Call to replace the current log handler.
  *
- *  @param logHandler The new log handler
+ *  @param logHandler The new log handler.
  *
- *  @return The previously installed log handler
+ *  @return The previously installed log handler.
  */
 + (nullable SRGLogHandler)setLogHandler:(nullable SRGLogHandler)logHandler;
 
 /**
- *  Log a message. Not meant to be called directly, use macros below instead
+ *  Log a message. Not meant to be called directly, use macros below instead.
  *
- *  @param message   A message block for message construction
- *  @param level     The logging level to use
- *  @param subsystem The subsystem with which the message must be associated
- *  @param category  The category with which the message must be associated
- *  @param file      File name information
- *  @param function  Function name information
- *  @param line      Line information
+ *  @param message   A message block for message construction.
+ *  @param level     The logging level to use.
+ *  @param subsystem The subsystem with which the message must be associated.
+ *  @param category  The category with which the message must be associated.
+ *  @param file      File name information.
+ *  @param function  Function name information.
+ *  @param line      Line information.
  */
 + (void)logMessage:(NSString * (^)(void))message
              level:(SRGLogLevel)level
@@ -142,12 +148,12 @@ OBJC_EXTERN SRGLogHandler SRGNSLogHandler(void);
 @end
 
 /**
- *  Generic macro for logging messages with a specific level
+ *  Generic macro for logging messages with a specific level.
  */
 #define SRGLog(_subsystem, _category, _level, _message) [SRGLogger logMessage:(_message) level:(_level) subsystem:(_subsystem) category:(_category) file:__FILE__ function:__PRETTY_FUNCTION__ line:__LINE__]
 
 /**
- *  Convenience macros for logging at all available levels
+ *  Convenience macros for logging at all available levels.
  */
 #define SRGLogVerbose(subsystem, category, format, ...) SRGLog(subsystem, category, SRGLogLevelVerbose, (^{ return [NSString stringWithFormat:(format), ##__VA_ARGS__]; }))
 #define SRGLogDebug(subsystem, category, format, ...)   SRGLog(subsystem, category, SRGLogLevelDebug,   (^{ return [NSString stringWithFormat:(format), ##__VA_ARGS__]; }))
