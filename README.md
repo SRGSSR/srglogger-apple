@@ -78,10 +78,7 @@ You can provide two optional arguments:
 * A subsystem, here `com.myapp`, which identifies the library or application you log from
 * A category, here `Weather`, which identifies which part of the code the log is related to
 
-To avoid specifying the subsystem or the domaine over and over, you should define your own macros in your own code, for example:
-
-To avoid specifiying the subsystem in your application or library each time you call the macro, you can define you
-own set of macros which always set this value consistently, for example:
+To avoid specifiying the subsystem in your application or library each time you call the macro, you can define your own set of macros which always set this value consistently, for example:
 
 ```objective-c
 #define MyAppLogVerbose(category, format, ...) SRGLogVerbose(@"com.myapp", category, format, ##__VA_ARGS__)
