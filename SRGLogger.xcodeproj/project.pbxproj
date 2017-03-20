@@ -13,6 +13,7 @@
 		6FA09D4C1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D4A1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m */; };
 		6FA09D6B1D9E85BC00EDCA64 /* SRGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */; };
 		6FA09D761D9E861600EDCA64 /* LoggerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */; };
+		6FEBEC8E1E7FDC32003F760F /* LoggerSwiftTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBEC8C1E7FDC00003F760F /* LoggerSwiftTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRGLogger-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA09D721D9E861600EDCA64 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerTestCase.m; sourceTree = "<group>"; };
+		6FEBEC8C1E7FDC00003F760F /* LoggerSwiftTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerSwiftTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */,
+				6FEBEC8C1E7FDC00003F760F /* LoggerSwiftTestCase.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -174,10 +177,12 @@
 				TargetAttributes = {
 					6FA09D351D9E6F8900EDCA64 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					6FA09D651D9E85BC00EDCA64 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -233,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FA09D761D9E861600EDCA64 /* LoggerTestCase.m in Sources */,
+				6FEBEC8E1E7FDC32003F760F /* LoggerSwiftTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +356,7 @@
 		6FA09D3F1D9E6F8900EDCA64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -361,12 +368,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.srgssr.SRGLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		6FA09D401D9E6F8900EDCA64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -378,6 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.srgssr.SRGLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -388,6 +399,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -398,6 +410,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
