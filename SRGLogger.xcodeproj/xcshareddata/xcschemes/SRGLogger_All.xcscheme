@@ -20,6 +20,20 @@
                ReferencedContainer = "container:SRGLogger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6FEBEC931E7FE7C8003F760F"
+               BuildableName = "SRGLogger_Swift.framework"
+               BlueprintName = "SRGLogger_Swift"
+               ReferencedContainer = "container:SRGLogger.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
