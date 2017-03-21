@@ -127,7 +127,7 @@ If the default log handler does not suit your needs (or if you simply want to in
 
 ```objective-c
 [SRGLogger setLogHandler:^(NSString * _Nonnull (^ _Nonnull message)(void), SRGLogLevel level, NSString *const  _Nullable subsystem, NSString *const  _Nullable category, const char * _Nonnull file, const char * _Nonnull function, NSUInteger line) {
-    // Foward information to anothe logger
+    // Foward information to another logger
 }];
 ```
 
@@ -135,7 +135,7 @@ or in Swift:
 
 ```swift
 SRGLogger.setLogHandler { (message, level, subsystem, category, file, function, line) in
-    // Foward information to anothe logger
+    // Foward information to another logger
 }
 ```
 
