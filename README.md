@@ -35,7 +35,7 @@ The library can be added to a project using [Carthage](https://github.com/Cartha
 github "SRGSSR/srglogger-ios"
 ```
 
-Then run `carthage update` to update the dependencies. You will need to manually add the `SRGLogger.framework` generated in the `Carthage/Build/iOS` folder to your projet. If your project needs to the logger from Swift source files, add `SRGLogger_Swift.framework` as well.
+Then run `carthage update` to update the dependencies. You will need to manually add the `SRGLogger.framework` generated in the `Carthage/Build/iOS` folder to your project. If your project needs to the logger from Swift source files, add `SRGLogger_Swift.framework` as well.
 
 For more information about Carthage and its use, refer to the [official documentation](https://github.com/Carthage/Carthage).
 
