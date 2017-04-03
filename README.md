@@ -139,6 +139,10 @@ SRGLogger.setLogHandler { (message, level, subsystem, category, file, function, 
 }
 ```
 
+## Thread-safety
+
+Logging can be performed from any thread.
+
 ## Apple unified logging troubleshooting
 
 If you are using Apple unified logging and do not see the logs:
@@ -160,6 +164,3 @@ This logger implementation is heavily based on [a Cédric Luthi's Stack Overflow
 ## License
 
 See the [LICENSE](LICENSE) file for more information.
-
-
-
