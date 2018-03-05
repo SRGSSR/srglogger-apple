@@ -163,4 +163,4 @@ This logger implementation is heavily based on [a Cédric Luthi's Stack Overflow
 
 ## License
 
-See the [LICENSE](LICENSE) file for more information.
+See the [LICENSE](../LICENSE) file for more information.
