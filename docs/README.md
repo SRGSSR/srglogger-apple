@@ -25,7 +25,7 @@ The library does not provide any logging to [NSLogger](https://github.com/fpille
 
 ## Compatibility
 
-The library is suitable for applications running on iOS 8 and above. The project is meant to be opened with the latest Xcode version (currently Xcode 8).
+The library is suitable for applications running on iOS 9 and above. The project is meant to be opened with the latest Xcode version (currently Xcode 9).
 
 ## Installation
 
@@ -163,4 +163,4 @@ This logger implementation is heavily based on [a Cédric Luthi's Stack Overflow
 
 ## License
 
-See the [LICENSE](LICENSE) file for more information.
+See the [LICENSE](../LICENSE) file for more information.
