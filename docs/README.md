@@ -49,7 +49,7 @@ The library requires the following frameworks to be added to any target requirin
 ### Dynamic framework integration
 
 1. Run `carthage update` to update the dependencies (which is equivalent to `carthage update --configuration Release`). 
-2. Add the frameworks listed above and generated in the `Carthage/Build/iOS` folder to your target embedded binaries.
+2. Add the frameworks listed above and generated in the `Carthage/Build/iOS` folder to your target _Embedded binaries_.
 
 If your target is building an application, a few more steps are required:
 
@@ -59,7 +59,7 @@ If your target is building an application, a few more steps are required:
 ### Static framework integration
 
 1. Run `carthage update --configuration Release-static` to update the dependencies. 
-2. Add the frameworks listed above and generated in the `Carthage/Build/iOS/Static` folder to the linked framework and libraries list of your target.
+2. Add the frameworks listed above and generated in the `Carthage/Build/iOS/Static` folder to the _Linked frameworks and libraries_ list of your target.
 3. Also add any resource bundle `.bundle` found within the `.framework` folders to your project directly.
 4. Add the `--all_load` flag to your target _Other linker flags_.
 
