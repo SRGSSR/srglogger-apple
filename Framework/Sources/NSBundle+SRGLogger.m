@@ -15,7 +15,9 @@
     static NSBundle *bundle;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        bundle = [NSBundle bundleForClass:[SRGLogger class]];
+        NSString *bundlePath = [[NSBundle bundleForClass:[SRGLogger class]].bundlePath stringByAppendingPathComponent:@"SRGLogger.bundle"];
+        bundle = [NSBundle bundleWithPath:bundlePath];
+        NSAssert(bundle, @"Please add SRGLogger.bundle to your project resources");
     });
     return bundle;
 }
