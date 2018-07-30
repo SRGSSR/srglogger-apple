@@ -204,9 +204,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6F444803210EF587009FDB70 /* SRGLogger-bundle */ = {
+		6F444803210EF587009FDB70 /* SRGLogger-resources */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6F44480B210EF587009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger-bundle" */;
+			buildConfigurationList = 6F44480B210EF587009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger-resources" */;
 			buildPhases = (
 				6F444800210EF587009FDB70 /* Sources */,
 				6F444801210EF587009FDB70 /* Frameworks */,
@@ -216,14 +216,14 @@
 			);
 			dependencies = (
 			);
-			name = "SRGLogger-bundle";
+			name = "SRGLogger-resources";
 			productName = "SRGLogger-bundle";
 			productReference = 6F444804210EF587009FDB70 /* SRGLogger.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		6F444818210F08BC009FDB70 /* SRGLogger_Swift-bundle */ = {
+		6F444818210F08BC009FDB70 /* SRGLogger_Swift-resources */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6F44481C210F08BD009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger_Swift-bundle" */;
+			buildConfigurationList = 6F44481C210F08BD009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger_Swift-resources" */;
 			buildPhases = (
 				6F444815210F08BC009FDB70 /* Sources */,
 				6F444816210F08BC009FDB70 /* Frameworks */,
@@ -233,7 +233,7 @@
 			);
 			dependencies = (
 			);
-			name = "SRGLogger_Swift-bundle";
+			name = "SRGLogger_Swift-resources";
 			productName = "SRGLogger_Swift-bundle";
 			productReference = 6F444819210F08BC009FDB70 /* SRGLogger_Swift.bundle */;
 			productType = "com.apple.product-type.bundle";
@@ -343,9 +343,9 @@
 			projectRoot = "";
 			targets = (
 				6FA09D351D9E6F8900EDCA64 /* SRGLogger */,
-				6F444803210EF587009FDB70 /* SRGLogger-bundle */,
+				6F444803210EF587009FDB70 /* SRGLogger-resources */,
 				6FEBEC931E7FE7C8003F760F /* SRGLogger_Swift */,
-				6F444818210F08BC009FDB70 /* SRGLogger_Swift-bundle */,
+				6F444818210F08BC009FDB70 /* SRGLogger_Swift-resources */,
 				6FA09D651D9E85BC00EDCA64 /* SRGLogger-tests */,
 			);
 		};
@@ -437,12 +437,12 @@
 /* Begin PBXTargetDependency section */
 		6F444813210F02BB009FDB70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6F444803210EF587009FDB70 /* SRGLogger-bundle */;
+			target = 6F444803210EF587009FDB70 /* SRGLogger-resources */;
 			targetProxy = 6F444812210F02BB009FDB70 /* PBXContainerItemProxy */;
 		};
 		6F444827210F09DD009FDB70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6F444818210F08BC009FDB70 /* SRGLogger_Swift-bundle */;
+			target = 6F444818210F08BC009FDB70 /* SRGLogger_Swift-resources */;
 			targetProxy = 6F444826210F09DD009FDB70 /* PBXContainerItemProxy */;
 		};
 		6FA09D6D1D9E85BC00EDCA64 /* PBXTargetDependency */ = {
@@ -699,7 +699,7 @@
 				INFOPLIST_FILE = Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-resources";
 				PRODUCT_NAME = SRGLogger;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -721,7 +721,7 @@
 				INFOPLIST_FILE = Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-resources";
 				PRODUCT_NAME = SRGLogger;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -743,7 +743,7 @@
 				INFOPLIST_FILE = Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-resources";
 				PRODUCT_NAME = SRGLogger;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -765,7 +765,7 @@
 				INFOPLIST_FILE = Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-resources";
 				PRODUCT_NAME = SRGLogger;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -787,7 +787,7 @@
 				INFOPLIST_FILE = Framework_Swift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-resources";
 				PRODUCT_NAME = SRGLogger_Swift;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -809,7 +809,7 @@
 				INFOPLIST_FILE = Framework_Swift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-resources";
 				PRODUCT_NAME = SRGLogger_Swift;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -831,7 +831,7 @@
 				INFOPLIST_FILE = Framework_Swift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-resources";
 				PRODUCT_NAME = SRGLogger_Swift;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -853,7 +853,7 @@
 				INFOPLIST_FILE = Framework_Swift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-resources";
 				PRODUCT_NAME = SRGLogger_Swift;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -1086,7 +1086,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6F44480B210EF587009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger-bundle" */ = {
+		6F44480B210EF587009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger-resources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6F444807210EF587009FDB70 /* Debug */,
@@ -1097,7 +1097,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6F44481C210F08BD009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger_Swift-bundle" */ = {
+		6F44481C210F08BD009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger_Swift-resources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6F44481D210F08BD009FDB70 /* Debug */,
