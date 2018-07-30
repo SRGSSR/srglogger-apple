@@ -43,8 +43,8 @@ For more information about Carthage and its use, refer to the [official document
 
 The library requires the following frameworks to be added to any target requiring it:
 
-* `SRGLogger.framework`: The main library framework.
-* `SRGLogger_Swift.framework`: A bridge for Swift code. This framework is only to be integrated if your target needs to use the libary from Swift source files.
+* `SRGLogger`: The main library framework.
+* `SRGLogger_Swift`: A bridge for Swift code. This framework is only to be integrated if your target needs to use the libary from Swift source files.
 
 ### Dynamic framework integration
 
