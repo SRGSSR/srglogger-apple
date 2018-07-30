@@ -35,9 +35,33 @@ The library can be added to a project using [Carthage](https://github.com/Cartha
 github "SRGSSR/srglogger-ios"
 ```
 
-Then run `carthage update` to update the dependencies. You will need to manually add the `SRGLogger.framework` generated in the `Carthage/Build/iOS` folder to your project. If your project needs to the logger from Swift source files, add `SRGLogger_Swift.framework` as well.
+Until Carthage 0.30, only dynamic frameworks could be integrated. Starting with Carthage 0.30, though, frameworks can be integrated statically as well, which avoids slow application startups usually associated with the use of too many dynamic frameworks.
 
 For more information about Carthage and its use, refer to the [official documentation](https://github.com/Carthage/Carthage).
+
+### Dependencies
+
+The library requires the following frameworks to be added to any target requiring it:
+
+* `SRGLogger.framework`: The main library framework.
+* `SRGLogger_Swift.framework`: A bridge for Swift code. This framework is only to be integrated if your target needs to use the libary from Swift source files.
+
+### Dynamic framework integration
+
+1. Run `carthage update` to update the dependencies (which is equivalent to `carthage update --configuration Release`). 
+2. Add the frameworks listed above and generated in the `Carthage/Build/iOS` folder to your target embedded binaries.
+
+If your target is building an application, a few more steps are required:
+
+1. Add a _Run script_ build phase to your target, with `/usr/local/bin/carthage copy-frameworks` as command.
+2. Add each of the required frameworks above as input file `$(SRCROOT)/Carthage/Build/iOS/FrameworkName.framework`.
+
+### Static framework integration
+
+1. Run `carthage update --configuration Release-static` to update the dependencies. 
+2. Add the frameworks listed above and generated in the `Carthage/Build/iOS/Static` folder to the linked framework and libraries list of your target.
+3. Also add any resource bundle `.bundle` found within the `.framework` folders to your project directly.
+4. Add the `--all_load` flag to your target _Other linker flags_.
 
 ## Usage
 
