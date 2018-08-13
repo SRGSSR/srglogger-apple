@@ -29,7 +29,7 @@ The library is suitable for applications running on iOS 9 and above. The project
 
 ## Installation
 
-The library can be added to a project using [Carthage](https://github.com/Carthage/Carthage)  by adding the following dependency to your `Cartfile`:
+The library can be added to a project using [Carthage](https://github.com/Carthage/Carthage) by adding the following dependency to your `Cartfile`:
     
 ```
 github "SRGSSR/srglogger-ios"
