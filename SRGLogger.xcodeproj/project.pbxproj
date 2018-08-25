@@ -108,8 +108,8 @@
 		6FA09D2C1D9E6F8900EDCA64 = {
 			isa = PBXGroup;
 			children = (
-				6FEBEC9C1E7FE892003F760F /* Framework_Swift */,
 				6FA09D411D9E6FDA00EDCA64 /* Framework */,
+				6FEBEC9C1E7FE892003F760F /* Framework_Swift */,
 				6FA09D711D9E861600EDCA64 /* Tests */,
 				6FA09D371D9E6F8900EDCA64 /* Products */,
 			);
