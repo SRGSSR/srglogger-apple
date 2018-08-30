@@ -163,6 +163,16 @@ SRGLogger.setLogHandler { (message, level, subsystem, category, file, function, 
 }
 ```
 
+## Building the project
+
+A [Makefile](../Makefile) provides several targets to build and package the library. The available targets can be listed by running the following command from the project root folder:
+
+```
+make help
+```
+
+Alternatively, you can of course open the project with Xcode and use the available schemes.
+
 ## Thread-safety
 
 Logging can be performed from any thread.
