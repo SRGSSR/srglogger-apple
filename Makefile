@@ -4,7 +4,7 @@
 all:
 	@echo "Building the project..."
 	@xcodebuild build
-	@echo ""
+	@echo "... done.\n"
 
 .PHONY: package
 package:
@@ -12,14 +12,14 @@ package:
 	@mkdir -p archive
 	@carthage build --no-skip-current
 	@carthage archive --output archive
-	@echo ""
+	@echo "... done.\n"
 
 .PHONY: clean
 clean:
 	@echo "Cleaning up build products..."
 	@xcodebuild clean
 	@rm -rf $(CARTHAGE_FOLDER)
-	@echo ""
+	@echo "... done.\n"
 
 .PHONY: help
 help:
