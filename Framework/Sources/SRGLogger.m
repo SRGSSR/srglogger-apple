@@ -199,5 +199,5 @@ __attribute__((constructor)) static void SRGLoggerInit(void)
 
 NSString *SRGLoggerMarketingVersion(void)
 {
-    return [NSBundle srg_loggerBundle].infoDictionary[@"CFBundleShortVersionString"];
+    return NSBundle.srg_loggerBundle.infoDictionary[@"CFBundleShortVersionString"];
 }
