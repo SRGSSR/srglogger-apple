@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The logger resource bundle
  */
-+ (NSBundle *)srg_loggerBundle;
+@property (class, nonatomic, readonly) NSBundle *srg_loggerBundle;
 
 @end
 

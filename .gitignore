@@ -3,5 +3,10 @@
 *.xcscmblueprint
 xcuserdata
 
-archive
-build
+/archive
+/build
+
+/Carthage
+
+/fastlane/report.xml
+/fastlane/test_output
