@@ -27,6 +27,10 @@ The library does not provide any logging to [NSLogger](https://github.com/fpille
 
 The library is suitable for applications running on iOS 9 and above. The project is meant to be opened with the latest Xcode version (currently Xcode 10).
 
+## Contributing
+
+If you want to contribute to the project, have a look at our [contributing guide](CONTRIBUTING.md).
+
 ## Installation
 
 The library can be added to a project using [Carthage](https://github.com/Carthage/Carthage) by adding the following dependency to your `Cartfile`:
