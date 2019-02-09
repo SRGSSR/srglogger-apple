@@ -17,11 +17,14 @@ platform :ios do
   end
 
   desc "Run library tests"
-  lane :test do
+  lane :tests do
     scan(
       scheme: "SRGLogger_All",
+      output_types: "",
+      fail_build: false,
       clean: true
-    ) 
+    )
+    trainer(output_directory: "./fastlane")
   end
 
   after_all do |lane|
