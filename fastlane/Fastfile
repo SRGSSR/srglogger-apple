@@ -19,7 +19,6 @@ platform :ios do
   desc "Run library tests"
   lane :tests do
     scan(
-      scheme: "SRGLogger_All",
       output_types: "",
       fail_build: false,
       clean: true
