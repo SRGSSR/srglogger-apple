@@ -191,7 +191,7 @@ If you are using Apple unified logging and do not see the logs:
 	```
 	
 1. Use the search to locate entries for your application name, and right-click on an entry to filter by application, subsystem or category
-1. Read the [official documentation](https://developer.apple.com/reference/os/1891852-logging) if you still have issues
+1. Read the [official documentation](https://developer.apple.com/documentation/os/logging) if you still have issues
 
 ## Credits
 
