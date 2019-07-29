@@ -91,8 +91,7 @@ SRGLogHandler SRGUnifiedLoggingHandler(void)
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if (@available(iOS 10, *)) {
-            s_handler = ^(NSString *(^message)(void), SRGLogLevel level, NSString * const subsystem, NSString * const category, const char *file, const char *function, NSUInteger line)
-            {
+            s_handler = ^(NSString *(^message)(void), SRGLogLevel level, NSString * const subsystem, NSString * const category, const char *file, const char *function, NSUInteger line) {
                 os_log_type_t type;
                 
                 switch (level) {
@@ -192,9 +191,6 @@ __attribute__((constructor)) static void SRGLoggerInit(void)
     }
     
     s_logHandler = SRGUnifiedLoggingHandler();
-    if (s_logHandler) {
-        return;
-    }
 }
 
 NSString *SRGLoggerMarketingVersion(void)

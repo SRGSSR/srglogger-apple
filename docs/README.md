@@ -27,6 +27,8 @@ The library does not provide any logging to [NSLogger](https://github.com/fpille
 
 The library is suitable for applications running on iOS 9 and above. The project is meant to be opened with the latest Xcode version (currently Xcode 10).
 
+Swift projects should use the [Swift companion framework](https://github.com/SRGSSR/srglogger-swift-ios) instead.
+
 ## Contributing
 
 If you want to contribute to the project, have a look at our [contributing guide](CONTRIBUTING.md).
@@ -43,10 +45,7 @@ For more information about Carthage and its use, refer to the [official document
 
 ### Dependencies
 
-The library requires the following frameworks to be added to any target requiring it:
-
-* `SRGLogger`: The main library framework.
-* `SRGLogger_Swift`: A bridge for Swift code. This framework is only to be integrated if your target needs to use the libary from Swift source files.
+The library requires the `SRGLogger` framework to be added to any target requiring it.
 
 ### Dynamic framework integration
 
@@ -67,11 +66,7 @@ If your target is building an application, a few more steps are required:
 
 ## Usage
 
-When you want to use classes or functions provided by the library in your code, you must import it from your source files first.
-
-### Usage from Objective-C source files
-
-Import the global header file using:
+When you want to use classes or functions provided by the library in your code, you must import it from your source files first:
 
 ```objective-c
 #import <SRGLogger/SRGLogger.h>
@@ -83,37 +78,20 @@ or directly import the module itself:
 @import SRGLogger;
 ```
 
-### Usage from Swift source files
-
-Import the modules where needed:
-
-```swift
-import SRGLogger
-import SRGLogger_Swift
-```
-
 ### Logging messages
 
-To log a message, simply call the macro corresponding to the desired level, for example in Objective-C:
+To log a message, simply call the macro corresponding to the desired level:
 
 ```objective-c
 SRGLogInfo(@"com.myapp", @"Weather", @"The temperature is %@", @(temperature));
 ```
-
-or in Swift:
-
-```Swift
-SRGLogInfo(subsystem: "com.myapp", category: "Weather", message: "The temperature is \(temperature)")
-```
-
-In Objective-C, `SRGLogger.framework` declares the required macros for logging at all supported levels. Since macros are not available in Swift, a companion framework declares equivalent functions for use from Swift source files.
 
 You can provide two optional arguments when logging a message:
 
 * A subsystem, here `com.myapp`, which identifies the library or application you log from.
 * A category, here `Weather`, which identifies which part of the code the log is related to.
 
-To avoid specifiying the subsystem in your application or library each time you call the macro, you can define your own set of helpers which always set this value consistently, for example macros in Objective-C:
+To avoid specifiying the subsystem in your application or library each time you call the macro, you can define your own set of helpers which always set this value consistently, for example:
 
 ```objective-c
 #define MyAppLogVerbose(category, format, ...) SRGLogVerbose(@"com.myapp", category, format, ##__VA_ARGS__)
@@ -123,46 +101,14 @@ To avoid specifiying the subsystem in your application or library each time you 
 #define MyAppLogError(category, format, ...)   SRGLogError(@"com.myapp", category, format, ##__VA_ARGS__)
 ```
 
-or functions in Swift:
-
-```swift
-func MyAppLogVerbose(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogVerbose(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
-}
-
-func MyAppLogDebug(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogDebug(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
-}
-
-func MyAppLogInfo(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogInfo(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
-}
-
-func MyAppLogWarning(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogWarning(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
-}
-
-func MyAppLogError(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogError(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
-}
-```
-
 ### Interfacing with other loggers
 
-If the default log handler does not suit your needs (or if you simply want to inhibit logging), call the `+setLogHandler` method to set a new handler (or `nil`). Then implement the handler block to forward the messages and contextual information to your other logger. In Objective-C:
+If the default log handler does not suit your needs (or if you simply want to inhibit logging), set a new handler to forward the messages and contextual information to your other logger:
 
 ```objective-c
 [SRGLogger setLogHandler:^(NSString * _Nonnull (^ _Nonnull message)(void), SRGLogLevel level, NSString *const  _Nullable subsystem, NSString *const  _Nullable category, const char * _Nonnull file, const char * _Nonnull function, NSUInteger line) {
     // Foward information to another logger
 }];
-```
-
-or in Swift:
-
-```swift
-SRGLogger.setLogHandler { (message, level, subsystem, category, file, function, line) in
-    // Foward information to another logger
-}
 ```
 
 ## Building the project
@@ -191,7 +137,7 @@ If you are using Apple unified logging and do not see the logs:
 	```
 	
 1. Use the search to locate entries for your application name, and right-click on an entry to filter by application, subsystem or category
-1. Read the [official documentation](https://developer.apple.com/reference/os/1891852-logging) if you still have issues
+1. Read the [official documentation](https://developer.apple.com/documentation/os/logging) if you still have issues
 
 ## Credits
 
