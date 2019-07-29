@@ -8,17 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6F444814210F02F2009FDB70 /* SRGLogger.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6F444804210EF587009FDB70 /* SRGLogger.bundle */; };
-		6F444825210F09B5009FDB70 /* SRGLogger_Swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6F444819210F08BC009FDB70 /* SRGLogger_Swift.bundle */; };
 		6FA09D471D9E6FDA00EDCA64 /* SRGLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FA09D441D9E6FDA00EDCA64 /* SRGLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6FA09D481D9E6FDA00EDCA64 /* SRGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D451D9E6FDA00EDCA64 /* SRGLogger.m */; };
 		6FA09D4B1D9E70ED00EDCA64 /* NSBundle+SRGLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FA09D491D9E70ED00EDCA64 /* NSBundle+SRGLogger.h */; };
 		6FA09D4C1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D4A1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m */; };
 		6FA09D6B1D9E85BC00EDCA64 /* SRGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */; };
 		6FA09D761D9E861600EDCA64 /* LoggerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */; };
-		6FD5F8881E7FEA570030C896 /* SRGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD5F8871E7FEA570030C896 /* SRGLogger.swift */; };
-		6FD5F8891E7FEACF0030C896 /* SRGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */; };
-		6FD5F88A1E7FFE750030C896 /* SRGLogger_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEBEC941E7FE7C8003F760F /* SRGLogger_Swift.framework */; };
-		6FEBEC8E1E7FDC32003F760F /* LoggerSwiftTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBEC8C1E7FDC00003F760F /* LoggerSwiftTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +23,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6F444803210EF587009FDB70;
 			remoteInfo = "SRGLogger-bundle";
-		};
-		6F444826210F09DD009FDB70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6FA09D2D1D9E6F8900EDCA64 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6F444818210F08BC009FDB70;
-			remoteInfo = "SRGLogger_Swift-bundle";
 		};
 		6FA09D6C1D9E85BC00EDCA64 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -46,10 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6F4447FC210EF419009FDB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F4447FD210EF420009FDB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F444804210EF587009FDB70 /* SRGLogger.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRGLogger.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F444819210F08BC009FDB70 /* SRGLogger_Swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRGLogger_Swift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRGLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA09D441D9E6FDA00EDCA64 /* SRGLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGLogger.h; sourceTree = "<group>"; };
 		6FA09D451D9E6FDA00EDCA64 /* SRGLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRGLogger.m; sourceTree = "<group>"; };
@@ -58,22 +44,11 @@
 		6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRGLogger-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA09D721D9E861600EDCA64 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerTestCase.m; sourceTree = "<group>"; };
-		6FD5F8871E7FEA570030C896 /* SRGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRGLogger.swift; sourceTree = "<group>"; };
 		6FE6E5B32148CBEB00228573 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6FE6E5B62148CC8400228573 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6FEBEC8C1E7FDC00003F760F /* LoggerSwiftTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerSwiftTestCase.swift; sourceTree = "<group>"; };
-		6FEBEC941E7FE7C8003F760F /* SRGLogger_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRGLogger_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6F444801210EF587009FDB70 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6F444816210F08BC009FDB70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -91,16 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FD5F88A1E7FFE750030C896 /* SRGLogger_Swift.framework in Frameworks */,
 				6FA09D6B1D9E85BC00EDCA64 /* SRGLogger.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6FEBEC901E7FE7C8003F760F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6FD5F8891E7FEACF0030C896 /* SRGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				6FA09D411D9E6FDA00EDCA64 /* Framework */,
-				6FEBEC9C1E7FE892003F760F /* Framework_Swift */,
 				6FA09D711D9E861600EDCA64 /* Tests */,
 				6FA09D371D9E6F8900EDCA64 /* Products */,
 			);
@@ -122,9 +87,7 @@
 			children = (
 				6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */,
 				6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */,
-				6FEBEC941E7FE7C8003F760F /* SRGLogger_Swift.framework */,
 				6F444804210EF587009FDB70 /* SRGLogger.bundle */,
-				6F444819210F08BC009FDB70 /* SRGLogger_Swift.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */,
-				6FEBEC8C1E7FDC00003F760F /* LoggerSwiftTestCase.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -176,32 +138,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		6FE6E5B52148CC8400228573 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6FE6E5B62148CC8400228573 /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		6FEBEC9C1E7FE892003F760F /* Framework_Swift */ = {
-			isa = PBXGroup;
-			children = (
-				6FEBEC9E1E7FE892003F760F /* Sources */,
-				6FE6E5B52148CC8400228573 /* Resources */,
-				6F4447FC210EF419009FDB70 /* Info.plist */,
-			);
-			path = Framework_Swift;
-			sourceTree = "<group>";
-		};
-		6FEBEC9E1E7FE892003F760F /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				6FD5F8871E7FEA570030C896 /* SRGLogger.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -211,13 +147,6 @@
 			files = (
 				6FA09D4B1D9E70ED00EDCA64 /* NSBundle+SRGLogger.h in Headers */,
 				6FA09D471D9E6FDA00EDCA64 /* SRGLogger.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6FEBEC911E7FE7C8003F760F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,23 +168,6 @@
 			name = "SRGLogger-resources";
 			productName = "SRGLogger-bundle";
 			productReference = 6F444804210EF587009FDB70 /* SRGLogger.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		6F444818210F08BC009FDB70 /* SRGLogger_Swift-resources */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6F44481C210F08BD009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger_Swift-resources" */;
-			buildPhases = (
-				6F444815210F08BC009FDB70 /* Sources */,
-				6F444816210F08BC009FDB70 /* Frameworks */,
-				6F444817210F08BC009FDB70 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SRGLogger_Swift-resources";
-			productName = "SRGLogger_Swift-bundle";
-			productReference = 6F444819210F08BC009FDB70 /* SRGLogger_Swift.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		6FA09D351D9E6F8900EDCA64 /* SRGLogger */ = {
@@ -295,25 +207,6 @@
 			productReference = 6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6FEBEC931E7FE7C8003F760F /* SRGLogger_Swift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6FEBEC9B1E7FE7C9003F760F /* Build configuration list for PBXNativeTarget "SRGLogger_Swift" */;
-			buildPhases = (
-				6FEBEC8F1E7FE7C8003F760F /* Sources */,
-				6FEBEC901E7FE7C8003F760F /* Frameworks */,
-				6FEBEC911E7FE7C8003F760F /* Headers */,
-				6FEBEC921E7FE7C8003F760F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6F444827210F09DD009FDB70 /* PBXTargetDependency */,
-			);
-			name = SRGLogger_Swift;
-			productName = SRGLogger_Swift;
-			productReference = 6FEBEC941E7FE7C8003F760F /* SRGLogger_Swift.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -328,10 +221,6 @@
 						CreatedOnToolsVersion = 9.4;
 						ProvisioningStyle = Automatic;
 					};
-					6F444818210F08BC009FDB70 = {
-						CreatedOnToolsVersion = 9.4;
-						ProvisioningStyle = Automatic;
-					};
 					6FA09D351D9E6F8900EDCA64 = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = "";
@@ -339,11 +228,6 @@
 					};
 					6FA09D651D9E85BC00EDCA64 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-					};
-					6FEBEC931E7FE7C8003F760F = {
-						CreatedOnToolsVersion = 8.2.1;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -364,8 +248,6 @@
 			targets = (
 				6FA09D351D9E6F8900EDCA64 /* SRGLogger */,
 				6F444803210EF587009FDB70 /* SRGLogger-resources */,
-				6FEBEC931E7FE7C8003F760F /* SRGLogger_Swift */,
-				6F444818210F08BC009FDB70 /* SRGLogger_Swift-resources */,
 				6FA09D651D9E85BC00EDCA64 /* SRGLogger-tests */,
 			);
 		};
@@ -373,13 +255,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		6F444802210EF587009FDB70 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6F444817210F08BC009FDB70 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,25 +276,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6FEBEC921E7FE7C8003F760F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6F444825210F09B5009FDB70 /* SRGLogger_Swift.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6F444800210EF587009FDB70 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6F444815210F08BC009FDB70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -440,15 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FA09D761D9E861600EDCA64 /* LoggerTestCase.m in Sources */,
-				6FEBEC8E1E7FDC32003F760F /* LoggerSwiftTestCase.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6FEBEC8F1E7FE7C8003F760F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6FD5F8881E7FEA570030C896 /* SRGLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,11 +310,6 @@
 			isa = PBXTargetDependency;
 			target = 6F444803210EF587009FDB70 /* SRGLogger-resources */;
 			targetProxy = 6F444812210F02BB009FDB70 /* PBXContainerItemProxy */;
-		};
-		6F444827210F09DD009FDB70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6F444818210F08BC009FDB70 /* SRGLogger_Swift-resources */;
-			targetProxy = 6F444826210F09DD009FDB70 /* PBXContainerItemProxy */;
 		};
 		6FA09D6D1D9E85BC00EDCA64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -559,30 +405,6 @@
 			};
 			name = "Debug-static";
 		};
-		6F4447F1210EEFAA009FDB70 /* Debug-static */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_CODE_COVERAGE = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Framework_Swift/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = "Debug-static";
-		};
 		6F4447F2210EEFAA009FDB70 /* Debug-static */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -674,29 +496,6 @@
 			};
 			name = "Release-static";
 		};
-		6F4447F5210EEFB0009FDB70 /* Release-static */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_CODE_COVERAGE = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Framework_Swift/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = "Release-static";
-		};
 		6F4447F6210EEFB0009FDB70 /* Release-static */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -784,82 +583,6 @@
 				PRODUCT_NAME = SRGLogger;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = "Release-static";
-		};
-		6F44481D210F08BD009FDB70 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				ENABLE_BITCODE = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Framework_Swift/Resources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-resources";
-				PRODUCT_NAME = SRGLogger_Swift;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		6F44481E210F08BD009FDB70 /* Debug-static */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				ENABLE_BITCODE = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Framework_Swift/Resources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-resources";
-				PRODUCT_NAME = SRGLogger_Swift;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = "Debug-static";
-		};
-		6F44481F210F08BD009FDB70 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				ENABLE_BITCODE = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Framework_Swift/Resources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-resources";
-				PRODUCT_NAME = SRGLogger_Swift;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		6F444820210F08BD009FDB70 /* Release-static */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				ENABLE_BITCODE = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Framework_Swift/Resources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift-resources";
-				PRODUCT_NAME = SRGLogger_Swift;
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = "Release-static";
@@ -1048,49 +771,6 @@
 			};
 			name = Release;
 		};
-		6FEBEC991E7FE7C9003F760F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Framework_Swift/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Debug;
-		};
-		6FEBEC9A1E7FE7C9003F760F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Framework_Swift/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.SRGLogger-Swift";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1101,17 +781,6 @@
 				6F444808210EF587009FDB70 /* Debug-static */,
 				6F444809210EF587009FDB70 /* Release */,
 				6F44480A210EF587009FDB70 /* Release-static */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6F44481C210F08BD009FDB70 /* Build configuration list for PBXNativeTarget "SRGLogger_Swift-resources" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6F44481D210F08BD009FDB70 /* Debug */,
-				6F44481E210F08BD009FDB70 /* Debug-static */,
-				6F44481F210F08BD009FDB70 /* Release */,
-				6F444820210F08BD009FDB70 /* Release-static */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1145,17 +814,6 @@
 				6F4447F2210EEFAA009FDB70 /* Debug-static */,
 				6FA09D701D9E85BC00EDCA64 /* Release */,
 				6F4447F6210EEFB0009FDB70 /* Release-static */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6FEBEC9B1E7FE7C9003F760F /* Build configuration list for PBXNativeTarget "SRGLogger_Swift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6FEBEC991E7FE7C9003F760F /* Debug */,
-				6F4447F1210EEFAA009FDB70 /* Debug-static */,
-				6FEBEC9A1E7FE7C9003F760F /* Release */,
-				6F4447F5210EEFB0009FDB70 /* Release-static */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
