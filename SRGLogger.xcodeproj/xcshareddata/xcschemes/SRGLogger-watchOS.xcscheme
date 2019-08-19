@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6F465F5C23067EC4000653E7"
-               BuildableName = "SRGLogger-watchOS.framework"
+               BuildableName = "SRGLogger.framework"
                BlueprintName = "SRGLogger-watchOS"
                ReferencedContainer = "container:SRGLogger.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6F465F5C23067EC4000653E7"
-            BuildableName = "SRGLogger-watchOS.framework"
+            BuildableName = "SRGLogger.framework"
             BlueprintName = "SRGLogger-watchOS"
             ReferencedContainer = "container:SRGLogger.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6F465F5C23067EC4000653E7"
-            BuildableName = "SRGLogger-watchOS.framework"
+            BuildableName = "SRGLogger.framework"
             BlueprintName = "SRGLogger-watchOS"
             ReferencedContainer = "container:SRGLogger.xcodeproj">
          </BuildableReference>
