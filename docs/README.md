@@ -17,7 +17,7 @@ Five logging levels are available, which should match most needs:
 The library automatically bridges with standard logging frameworks, in the following order:
 
 * If your project uses [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack), messages will be forwarded to it.
-* If your project can use [Apple unified logging](https://developer.apple.com/reference/os/1891852-logging), available starting from iOS / tvOS 10 and watchOS 3, messages will be forwarded to the system console.
+* If your project can use [Apple unified logging](https://developer.apple.com/reference/os/1891852-logging), available starting from iOS 9, tvOS 9 and watchOS 3, messages will be forwarded to the system console.
 
 If neither is available, no logging will take place. You can install a verbose `NSLog` based logger, provided as well, if you need a quick way to setup logging (this logger logs all messages and can slow down your application).
 
