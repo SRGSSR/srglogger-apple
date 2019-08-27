@@ -87,8 +87,8 @@
 			children = (
 				6FA09D411D9E6FDA00EDCA64 /* Framework */,
 				6FA09D711D9E861600EDCA64 /* Tests */,
-				6FA09D371D9E6F8900EDCA64 /* Products */,
 				6F465F5A23067DD4000653E7 /* Frameworks */,
+				6FA09D371D9E6F8900EDCA64 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -388,7 +388,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.${TARGET_NAME}";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = "Debug-static";
@@ -472,7 +472,7 @@
 				MARKETING_VERSION = 2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.${TARGET_NAME}";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				VERSION_INFO_PREFIX = "";
 			};
@@ -520,6 +520,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Framework/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = SRGLogger;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = bundle;
@@ -539,6 +540,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Framework/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = SRGLogger;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = bundle;
@@ -558,6 +560,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Framework/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = SRGLogger;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = bundle;
@@ -577,6 +580,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Framework/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = SRGLogger;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = bundle;
@@ -640,7 +644,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.${TARGET_NAME}";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
@@ -695,7 +699,7 @@
 				MARKETING_VERSION = 2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.srgssr.${TARGET_NAME}";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				VERSION_INFO_PREFIX = "";
 			};
