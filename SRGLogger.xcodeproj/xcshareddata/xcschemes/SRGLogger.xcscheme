@@ -35,7 +35,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6FA09D651D9E85BC00EDCA64"
-               BuildableName = "SRGLogger.xctest"
+               BuildableName = "SRGLogger-tests.xctest"
                BlueprintName = "SRGLogger-tests"
                ReferencedContainer = "container:SRGLogger.xcodeproj">
             </BuildableReference>

@@ -43,7 +43,7 @@
 		6FA09D451D9E6FDA00EDCA64 /* SRGLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRGLogger.m; sourceTree = "<group>"; };
 		6FA09D491D9E70ED00EDCA64 /* NSBundle+SRGLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SRGLogger.h"; sourceTree = "<group>"; };
 		6FA09D4A1D9E70ED00EDCA64 /* NSBundle+SRGLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SRGLogger.m"; sourceTree = "<group>"; };
-		6FA09D661D9E85BC00EDCA64 /* SRGLogger.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRGLogger.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRGLogger-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA09D721D9E861600EDCA64 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FA09D741D9E861600EDCA64 /* LoggerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerTestCase.m; sourceTree = "<group>"; };
 		6FE6E5B32148CBEB00228573 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */,
-				6FA09D661D9E85BC00EDCA64 /* SRGLogger.xctest */,
+				6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */,
 				6F444804210EF587009FDB70 /* SRGLogger.bundle */,
 			);
 			name = Products;
@@ -216,7 +216,7 @@
 			);
 			name = "SRGLogger-tests";
 			productName = "SRGLogger-tests";
-			productReference = 6FA09D661D9E85BC00EDCA64 /* SRGLogger.xctest */;
+			productReference = 6FA09D661D9E85BC00EDCA64 /* SRGLogger-tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
