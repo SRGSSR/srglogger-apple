@@ -38,6 +38,7 @@
 		083459872311E49B00A6C5BA /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
 		6F4447FD210EF420009FDB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F444804210EF587009FDB70 /* SRGLogger.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRGLogger.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F706D41231D162B00DCBC6F /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		6FA09D361D9E6F8900EDCA64 /* SRGLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRGLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA09D441D9E6FDA00EDCA64 /* SRGLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGLogger.h; sourceTree = "<group>"; };
 		6FA09D451D9E6FDA00EDCA64 /* SRGLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRGLogger.m; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		6FA09D2C1D9E6F8900EDCA64 = {
 			isa = PBXGroup;
 			children = (
+				6F706D41231D162B00DCBC6F /* Common.xcconfig */,
 				6FA09D411D9E6FDA00EDCA64 /* Framework */,
 				6FA09D711D9E861600EDCA64 /* Tests */,
 				6F465F5A23067DD4000653E7 /* Frameworks */,
