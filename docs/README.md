@@ -1,6 +1,6 @@
-![SRG Logger logo](README-images/logo.png)
+[![SRG Logger logo](README-images/logo.png)](https://github.com/SRGSSR/srglogger-ios)
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
+[![GitHub releases](https://img.shields.io/github/v/release/SRGSSR/srglogger-ios)](https://github.com/SRGSSR/srglogger-ios/releases) [![platform](https://img.shields.io/badge/platfom-ios%20%7C%20tvos%20%7C%20watchos-blue)](https://github.com/SRGSSR/srglogger-ios) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![GitHub license](https://img.shields.io/github/license/SRGSSR/srglogger-ios)](https://github.com/SRGSSR/srglogger-ios/blob/master/LICENSE) 
 
 ## About
 
