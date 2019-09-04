@@ -18,6 +18,8 @@ platform :ios do
 
   desc "Run library tests"
   lane :tests do
+    override_test_product_names
+
     scan(
       devices: ["iPhone X", "Apple TV"],
       output_types: "",
@@ -25,6 +27,30 @@ platform :ios do
       clean: true
     )
     trainer(output_directory: "./fastlane")
+
+    reset_override_test_product_names
+  end
+
+  desc "Override test product names to split iOS and tvOS test results"
+  private_lane :override_test_product_names  do
+    set_xcconfig_value(
+      path: 'Tests/Tests.xcconfig',
+      name: 'PRODUCT_NAME[sdk=iphone*]',
+      value: '$(PROJECT_NAME)-iOS'
+    )
+    set_xcconfig_value(
+      path: 'Tests/Tests.xcconfig',
+      name: 'PRODUCT_NAME[sdk=appletv*]',
+      value: '$(PROJECT_NAME)-tvOS'
+    )
+  end
+
+  desc "Reset override test product names to split iOS and tvOS test results"
+  private_lane :reset_override_test_product_names  do
+    reset_git_repo(
+      force: true,
+      files: [ "Tests/Tests.xcconfig" ]
+    )
   end
 
   after_all do |lane|
