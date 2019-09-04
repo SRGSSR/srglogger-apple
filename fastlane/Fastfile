@@ -27,8 +27,6 @@ platform :ios do
       clean: true
     )
     trainer(output_directory: "./fastlane")
-
-    reset_override_test_product_names
   end
 
   desc "Override test product names to split iOS and tvOS test results"
@@ -42,14 +40,6 @@ platform :ios do
       path: 'Tests/Tests.xcconfig',
       name: 'PRODUCT_NAME[sdk=appletv*]',
       value: '$(PROJECT_NAME)-tvOS'
-    )
-  end
-
-  desc "Reset override test product names to split iOS and tvOS test results"
-  private_lane :reset_override_test_product_names  do
-    reset_git_repo(
-      force: true,
-      files: [ "Tests/Tests.xcconfig" ]
     )
   end
 
