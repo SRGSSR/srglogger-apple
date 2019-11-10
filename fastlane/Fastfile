@@ -24,14 +24,10 @@ platform :ios do
 
     override_test_product_names
 
-    test_with_device('iPhone 11')
-    test_with_device('Apple TV')
+    devices = ['iPhone 11', 'Apple TV']
+    test_with_devices(devices)
 
-    Dir.chdir(xcresults_path) do
-      if Dir['*.xcresult'].count != 2
-        UI.user_error!('Whoops, too many xcresult files as expected.')
-      end
-    end
+    check_xcresults_path(devices)
 
     trainer(
       path: xcresults_path,
@@ -49,6 +45,7 @@ platform :ios do
   end
 end
 
+# Override test product names to split iOS and tvOS test results
 def override_test_product_names
   set_xcconfig_value(
     path: 'Tests/Tests.xcconfig',
@@ -62,21 +59,29 @@ def override_test_product_names
   )
 end
 
-def test_with_device(device)
-  output_style = FastlaneCore::Env.truthy?('TRAVIS') ? 'raw' : 'standard'
-
-  scan(
-    device: device,
-    output_types: '',
-    output_style: output_style,
-    fail_build: false,
-    clean: true
-  )
+def test_with_devices(devices)
+  devices.each do |device|
+    scan(
+      device: device,
+      output_types: '',
+      output_style: FastlaneCore::Env.truthy?('TRAVIS') ? 'raw' : 'standard',
+      fail_build: false,
+      clean: true
+    )
+  end
 end
 
 def xcresults_path
   derived_data_path = lane_context[SharedValues::SCAN_DERIVED_DATA_PATH]
   derived_data_path + '/Logs/Test/'
+end
+
+def check_xcresults_path(devices)
+  Dir.chdir(xcresults_path) do
+    if Dir['*.xcresult'].count != devices.count
+      UI.user_error!('Whoops, unexpected xcresult file count.')
+    end
+  end
 end
 
 # More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
