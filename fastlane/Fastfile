@@ -24,7 +24,7 @@ platform :ios do
 
     override_test_product_names
 
-    test_with_devices(['iPhone 11', 'Apple TV'])
+    run_tests_with_devices(['iPhone 11', 'Apple TV'])
 
     trainer(
       path: './fastlane',
@@ -61,7 +61,7 @@ def override_test_product_names
   )
 end
 
-def test_with_devices(devices)
+def run_tests_with_devices(devices)
   devices.each do |device|
     srg_scan(device)
     copy_last_xcresult
