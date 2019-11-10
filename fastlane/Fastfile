@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Customise this file, documentation can be found here:
 # https://github.com/fastlane/fastlane/tree/master/fastlane/docs
 # All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
@@ -7,52 +9,75 @@
 # All lines starting with a # are ignored when running `fastlane`
 
 # This is the minimum version number required.
-fastlane_version "1.95.0"
+fastlane_version '2.96.0'
 
 default_platform :ios
 
 platform :ios do
-  before_all do |lane|
+  before_all do
     ensure_git_status_clean
   end
 
-  desc "Run library tests"
+  desc 'Run library tests'
   lane :tests do
+    Dir['*.xml'].each { |file| File.delete(file) }
+
     override_test_product_names
 
-    scan(
-      devices: ["iPhone X", "Apple TV"],
-      output_types: "",
-      fail_build: false,
-      clean: true
-    )
-    trainer(output_directory: "./fastlane")
-  end
+    test_with_device('iPhone 11')
+    test_with_device('Apple TV')
 
-  desc "Override test product names to split iOS and tvOS test results"
-  private_lane :override_test_product_names  do
-    set_xcconfig_value(
-      path: 'Tests/Tests.xcconfig',
-      name: 'PRODUCT_NAME[sdk=iphone*]',
-      value: '$(PROJECT_NAME)-iOS'
-    )
-    set_xcconfig_value(
-      path: 'Tests/Tests.xcconfig',
-      name: 'PRODUCT_NAME[sdk=appletv*]',
-      value: '$(PROJECT_NAME)-tvOS'
+    Dir.chdir(xcresults_path) do
+      if Dir['*.xcresult'].count != 2
+        UI.user_error!('Whoops, too many xcresult files as expected.')
+      end
+    end
+
+    trainer(
+      path: xcresults_path,
+      output_directory: './fastlane'
     )
   end
 
-  after_all do |lane|
+  after_all do
     reset_git_repo(skip_clean: true)
   end
 
-  error do |lane, exception|
+  error do
     clean_build_artifacts
     reset_git_repo(skip_clean: true, force: true)
   end
 end
 
+def override_test_product_names
+  set_xcconfig_value(
+    path: 'Tests/Tests.xcconfig',
+    name: 'PRODUCT_NAME[sdk=iphone*]',
+    value: '$(PROJECT_NAME)-iOS'
+  )
+  set_xcconfig_value(
+    path: 'Tests/Tests.xcconfig',
+    name: 'PRODUCT_NAME[sdk=appletv*]',
+    value: '$(PROJECT_NAME)-tvOS'
+  )
+end
+
+def test_with_device(device)
+  output_style = FastlaneCore::Env.truthy?('TRAVIS') ? 'raw' : 'standard'
+
+  scan(
+    device: device,
+    output_types: '',
+    output_style: output_style,
+    fail_build: false,
+    clean: true
+  )
+end
+
+def xcresults_path
+  derived_data_path = lane_context[SharedValues::SCAN_DERIVED_DATA_PATH]
+  derived_data_path + '/Logs/Test/'
+end
 
 # More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
 # All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
