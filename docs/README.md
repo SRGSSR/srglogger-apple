@@ -1,6 +1,6 @@
-[![SRG Logger logo](README-images/logo.png)](https://github.com/SRGSSR/srglogger-ios)
+[![SRG Logger logo](README-images/logo.png)](https://github.com/SRGSSR/srglogger-apple)
 
-[![GitHub releases](https://img.shields.io/github/v/release/SRGSSR/srglogger-ios)](https://github.com/SRGSSR/srglogger-ios/releases) [![platform](https://img.shields.io/badge/platfom-ios%20%7C%20tvos%20%7C%20watchos-blue)](https://github.com/SRGSSR/srglogger-ios) [![Build Status](https://travis-ci.org/SRGSSR/srglogger-ios.svg?branch=master)](https://travis-ci.org/SRGSSR/srglogger-ios/branches) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![GitHub license](https://img.shields.io/github/license/SRGSSR/srglogger-ios)](https://github.com/SRGSSR/srglogger-ios/blob/master/LICENSE)
+[![GitHub releases](https://img.shields.io/github/v/release/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/releases) [![platform](https://img.shields.io/badge/platfom-ios%20%7C%20tvos%20%7C%20watchos-blue)](https://github.com/SRGSSR/srglogger-apple) [![Build Status](https://travis-ci.org/SRGSSR/srglogger-apple.svg?branch=master)](https://travis-ci.org/SRGSSR/srglogger-apple/branches) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![GitHub license](https://img.shields.io/github/license/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/blob/master/LICENSE)
 
 ## About
 
@@ -25,7 +25,7 @@ The library does not provide any logging to [NSLogger](https://github.com/fpille
 
 ## Compatibility
 
-The library is suitable for applications running on iOS 9, tvOS 9, watchOS 3 and above. The project is meant to be opened with the latest Xcode version.
+The library is suitable for applications running on iOS 9, tvOS 12, watchOS 5 and above. The project is meant to be opened with the latest Xcode version.
 
 Swift projects should use the [Swift companion framework](https://github.com/SRGSSR/srglogger-swift-ios) instead.
 
@@ -38,7 +38,7 @@ If you want to contribute to the project, have a look at our [contributing guide
 The library can be added to a project using [Carthage](https://github.com/Carthage/Carthage) by adding the following dependency to your `Cartfile`:
     
 ```
-github "SRGSSR/srglogger-ios"
+github "SRGSSR/srglogger-apple"
 ```
 
 For more information about Carthage and its use, refer to the [official documentation](https://github.com/Carthage/Carthage).
