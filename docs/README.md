@@ -1,10 +1,10 @@
-![SRG Logger logo](README-images/logo.png)
+[![SRG Logger logo](README-images/logo.png)](https://github.com/SRGSSR/srglogger-apple)
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
+[![GitHub releases](https://img.shields.io/github/v/release/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/releases) [![platform](https://img.shields.io/badge/platfom-ios%20%7C%20tvos%20%7C%20watchos-blue)](https://github.com/SRGSSR/srglogger-apple) [![Build Status](https://travis-ci.org/SRGSSR/srglogger-apple.svg?branch=master)](https://travis-ci.org/SRGSSR/srglogger-apple/branches) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![GitHub license](https://img.shields.io/github/license/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/blob/master/LICENSE)
 
 ## About
 
-The SRG Logger library for iOS provides a simple way to unify logging between SRG SSR libraries and applications, but can be used by any other application or library as well.
+The SRG Logger library provides a simple way to unify logging between SRG SSR libraries and applications, but can be used by any other application or library as well.
 
 Five logging levels are available, which should match most needs:
 
@@ -17,7 +17,7 @@ Five logging levels are available, which should match most needs:
 The library automatically bridges with standard logging frameworks, in the following order:
 
 * If your project uses [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack), messages will be forwarded to it.
-* If your project can use [Apple unified logging](https://developer.apple.com/reference/os/1891852-logging), available starting from iOS 10, messages will be forwarded to the system console.
+* If your project can use [Apple unified logging](https://developer.apple.com/reference/os/1891852-logging), available starting from iOS 10, tvOS 10 and watchOS 3, messages will be forwarded to the system console.
 
 If neither is available, no logging will take place. You can install a verbose `NSLog` based logger, provided as well, if you need a quick way to setup logging (this logger logs all messages and can slow down your application).
 
@@ -25,7 +25,7 @@ The library does not provide any logging to [NSLogger](https://github.com/fpille
 
 ## Compatibility
 
-The library is suitable for applications running on iOS 9 and above. The project is meant to be opened with the latest Xcode version (currently Xcode 10).
+The library is suitable for applications running on iOS 9, tvOS 12, watchOS 5 and above. The project is meant to be opened with the latest Xcode version.
 
 Swift projects should use the [Swift companion framework](https://github.com/SRGSSR/srglogger-swift-ios) instead.
 
@@ -38,7 +38,7 @@ If you want to contribute to the project, have a look at our [contributing guide
 The library can be added to a project using [Carthage](https://github.com/Carthage/Carthage) by adding the following dependency to your `Cartfile`:
     
 ```
-github "SRGSSR/srglogger-ios"
+github "SRGSSR/srglogger-apple"
 ```
 
 For more information about Carthage and its use, refer to the [official documentation](https://github.com/Carthage/Carthage).
@@ -50,17 +50,17 @@ The library requires the `SRGLogger` framework to be added to any target requiri
 ### Dynamic framework integration
 
 1. Run `carthage update` to update the dependencies (which is equivalent to `carthage update --configuration Release`). 
-2. Add the frameworks listed above and generated in the `Carthage/Build/iOS` folder to your target _Embedded binaries_.
+2. Add the frameworks listed above and generated in the `Carthage/Build/(iOS|tvOS|watchOS)` folder to your target _Embedded binaries_.
 
 If your target is building an application, a few more steps are required:
 
 1. Add a _Run script_ build phase to your target, with `/usr/local/bin/carthage copy-frameworks` as command.
-2. Add each of the required frameworks above as input file `$(SRCROOT)/Carthage/Build/iOS/FrameworkName.framework`.
+2. Add each of the required frameworks above as input file `$(SRCROOT)/Carthage/Build/(iOS|tvOS|watchOS)/FrameworkName.framework`.
 
 ### Static framework integration
 
 1. Run `carthage update --configuration Release-static` to update the dependencies. 
-2. Add the frameworks listed above and generated in the `Carthage/Build/iOS/Static` folder to the _Linked frameworks and libraries_ list of your target.
+2. Add the frameworks listed above and generated in the `Carthage/Build/(iOS|tvOS|watchOS)/Static` folder to the _Linked frameworks and libraries_ list of your target.
 3. Also add any resource bundle `.bundle` found within the `.framework` folders to your target directly.
 4. Add the `-all_load` flag to your target _Other linker flags_.
 
