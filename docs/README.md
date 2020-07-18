@@ -33,23 +33,17 @@ If you want to contribute to the project, have a look at our [contributing guide
 
 ## Integration
 
-The library must be integrated using [Swift Package Manager](https://swift.org/package-manager), directly [within Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app). You can also declare the library as a dependency of another one directly in the associated `Package.swift` manifest.
+The library must be integrated using [Swift Package Manager](https://swift.org/package-manager) directly [within Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app). You can also declare the library as a dependency of another one directly in the associated `Package.swift` manifest.
 
-## Use
+## Usage
 
-When you want to use classes or functions provided by the library in your code, you must import it from your source files first. In Objective-C import the main framework header file:
-
-```objective-c
-#import <SRGLogger.h>
-```
-
-or directly import the module itself:
+When you want to use classes or functions provided by the library in your code, you must import it from your source files first. In Objective-C:
 
 ```objective-c
 @import SRGLogger;
 ```
 
-In Swift you must import the corresponding module only, but link your project against both libraries:
+or in Swift:
 
 ```swift
 import SRGLogger_Swift
