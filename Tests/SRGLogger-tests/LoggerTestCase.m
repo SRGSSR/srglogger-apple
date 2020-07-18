@@ -4,8 +4,8 @@
 //  License information is available from the LICENSE file.
 //
 
-#import <SRGLogger/SRGLogger.h>
-#import <XCTest/XCTest.h>
+@import SRGLogger;
+@import XCTest;
 
 #define TestLogError(category, format, ...)   SRGLogError(@"ch.srgssr.logger-tests", category, format, ##__VA_ARGS__)
 
