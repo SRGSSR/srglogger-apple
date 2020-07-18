@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "srglogger-apple",
+    name: "SRGLogger",
     platforms: [
         .iOS(.v9),
         .tvOS(.v12),
