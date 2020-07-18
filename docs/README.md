@@ -1,6 +1,6 @@
 [![SRG Logger logo](README-images/logo.png)](https://github.com/SRGSSR/srglogger-apple)
 
-[![GitHub releases](https://img.shields.io/github/v/release/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/releases) [![platform](https://img.shields.io/badge/platfom-ios%20%7C%20tvos%20%7C%20watchos-blue)](https://github.com/SRGSSR/srglogger-apple) [![Build Status](https://travis-ci.org/SRGSSR/srglogger-apple.svg?branch=master)](https://travis-ci.org/SRGSSR/srglogger-apple/branches) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![GitHub license](https://img.shields.io/github/license/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/blob/master/LICENSE)
+[![GitHub releases](https://img.shields.io/github/v/release/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/releases) [![platform](https://img.shields.io/badge/platfom-ios%20%7C%20tvos%20%7C%20watchos-blue)](https://github.com/SRGSSR/srglogger-apple) [![Build Status](https://travis-ci.org/SRGSSR/srglogger-apple.svg?branch=master)](https://travis-ci.org/SRGSSR/srglogger-apple/branches) [![GitHub license](https://img.shields.io/github/license/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/blob/master/LICENSE)
 
 ## About
 
@@ -25,51 +25,22 @@ The library does not provide any logging to [NSLogger](https://github.com/fpille
 
 ## Compatibility
 
-The library is suitable for applications running on iOS 9, tvOS 12, watchOS 5 and above. The project is meant to be opened with the latest Xcode version.
-
-Swift projects should use the [Swift companion framework](https://github.com/SRGSSR/srglogger-swift-ios) instead.
+The library is suitable for applications running on iOS 9, tvOS 12, watchOS 5 and above. The project is meant to be compiled with the latest Xcode version.
 
 ## Contributing
 
 If you want to contribute to the project, have a look at our [contributing guide](CONTRIBUTING.md).
 
-## Installation
+## Integration
 
-The library can be added to a project using [Carthage](https://github.com/Carthage/Carthage) by adding the following dependency to your `Cartfile`:
-    
-```
-github "SRGSSR/srglogger-apple"
-```
+The library must be integrated using [Swift Package Manager](https://swift.org/package-manager), directly [within Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app). You can also declare the library as a dependency of another one directly in the associated `Package.swift` manifest.
 
-For more information about Carthage and its use, refer to the [official documentation](https://github.com/Carthage/Carthage).
+## Use
 
-### Dependencies
-
-The library requires the `SRGLogger` framework to be added to any target requiring it.
-
-### Dynamic framework integration
-
-1. Run `carthage update` to update the dependencies (which is equivalent to `carthage update --configuration Release`). 
-2. Add the frameworks listed above and generated in the `Carthage/Build/(iOS|tvOS|watchOS)` folder to your target _Embedded binaries_.
-
-If your target is building an application, a few more steps are required:
-
-1. Add a _Run script_ build phase to your target, with `/usr/local/bin/carthage copy-frameworks` as command.
-2. Add each of the required frameworks above as input file `$(SRCROOT)/Carthage/Build/(iOS|tvOS|watchOS)/FrameworkName.framework`.
-
-### Static framework integration
-
-1. Run `carthage update --configuration Release-static` to update the dependencies. 
-2. Add the frameworks listed above and generated in the `Carthage/Build/(iOS|tvOS|watchOS)/Static` folder to the _Linked frameworks and libraries_ list of your target.
-3. Also add any resource bundle `.bundle` found within the `.framework` folders to your target directly.
-4. Add the `-all_load` flag to your target _Other linker flags_.
-
-## Usage
-
-When you want to use classes or functions provided by the library in your code, you must import it from your source files first:
+When you want to use classes or functions provided by the library in your code, you must import it from your source files first. In Objective-C import the main framework header file:
 
 ```objective-c
-#import <SRGLogger/SRGLogger.h>
+#import <SRGLogger.h>
 ```
 
 or directly import the module itself:
@@ -78,12 +49,24 @@ or directly import the module itself:
 @import SRGLogger;
 ```
 
-### Logging messages
+In Swift you must import the corresponding module only, but link your project against both libraries:
 
-To log a message, simply call the macro corresponding to the desired level:
+```swift
+import SRGLogger_Swift
+```
+
+## Logging messages
+
+To log a message, simply call the macro corresponding to the desired level. In Objective-C:
 
 ```objective-c
 SRGLogInfo(@"com.myapp", @"Weather", @"The temperature is %@", @(temperature));
+```
+
+or in Swift:
+
+```swift
+SRGLogInfo(subsystem: "com.myapp", category: "Weather", message: "The temperature is \(temperature)")
 ```
 
 You can provide two optional arguments when logging a message:
@@ -91,7 +74,7 @@ You can provide two optional arguments when logging a message:
 * A subsystem, here `com.myapp`, which identifies the library or application you log from.
 * A category, here `Weather`, which identifies which part of the code the log is related to.
 
-To avoid specifiying the subsystem in your application or library each time you call the macro, you can define your own set of helpers which always set this value consistently, for example:
+To avoid specifiying the subsystem in your application or library each time you call the macro, you can define your own set of helpers which always set this value consistently, for example in Objective-C:
 
 ```objective-c
 #define MyAppLogVerbose(category, format, ...) SRGLogVerbose(@"com.myapp", category, format, ##__VA_ARGS__)
@@ -101,9 +84,33 @@ To avoid specifiying the subsystem in your application or library each time you 
 #define MyAppLogError(category, format, ...)   SRGLogError(@"com.myapp", category, format, ##__VA_ARGS__)
 ```
 
-### Interfacing with other loggers
+or in Swift:
 
-If the default log handler does not suit your needs (or if you simply want to inhibit logging), set a new handler to forward the messages and contextual information to your other logger:
+```swift
+func MyAppLogVerbose(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
+    SRGLogVerbose(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+}
+
+func MyAppLogDebug(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
+    SRGLogDebug(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+}
+
+func MyAppLogInfo(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
+    SRGLogInfo(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+}
+
+func MyAppLogWarning(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
+    SRGLogWarning(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+}
+
+func MyAppLogError(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
+    SRGLogError(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+}
+```
+
+## Interfacing with other loggers
+
+If the default log handler does not suit your needs (or if you simply want to inhibit logging), set a new handler to forward the messages and contextual information to your other logger. In Objective-C:
 
 ```objective-c
 [SRGLogger setLogHandler:^(NSString * _Nonnull (^ _Nonnull message)(void), SRGLogLevel level, NSString *const  _Nullable subsystem, NSString *const  _Nullable category, const char * _Nonnull file, const char * _Nonnull function, NSUInteger line) {
@@ -111,15 +118,13 @@ If the default log handler does not suit your needs (or if you simply want to in
 }];
 ```
 
-## Building the project
+or in Swift:
 
-A [Makefile](../Makefile) provides several targets to build and package the library. The available targets can be listed by running the following command from the project root folder:
-
+```swift
+SRGLogger.setLogHandler { (message, level, subsystem, category, file, function, line) in
+    // Foward information to another logger
+}
 ```
-make help
-```
-
-Alternatively, you can of course open the project with Xcode and use the available schemes.
 
 ## Thread-safety
 
