@@ -6,8 +6,6 @@
 
 #import "SRGLogger.h"
 
-#import "NSBundle+SRGLogger.h"
-
 #import <os/log.h>
 
 // DDLog levels

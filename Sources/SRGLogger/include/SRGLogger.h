@@ -107,8 +107,8 @@ OBJC_EXTERN SRGLogHandler SRGNSLogHandler(void);
  *  ## Use from Swift code
  *
  *  `SRGLogger` uses macros to log contextual information (file name, line number, etc.) which cannot be used from Swift
- *  source files. If you need to use `SRGLogger` from a Swift source file, use the functions declared by `SRGLogger_Swift`
- *  framework, available at https://github.com/SRGSSR/srglogger-swift-ios, and which play the same role.
+ *  source files. If you need to use `SRGLogger` from a Swift source file, use the functions declared by the companion
+ *  `SRGLoggerSwift` framework.
  *
  *  ## Credits
  *

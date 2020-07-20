@@ -46,7 +46,7 @@ When you want to use classes or functions provided by the library in your code, 
 or in Swift:
 
 ```swift
-import SRGLogger_Swift
+import SRGLoggerSwift
 ```
 
 ## Logging messages

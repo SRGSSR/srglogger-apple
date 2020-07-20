@@ -4,7 +4,7 @@
 //  License information is available from the LICENSE file.
 //
 
-import SRGLogger_Swift
+import SRGLoggerSwift
 import XCTest
 
 func TestLogError(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
@@ -13,7 +13,7 @@ func TestLogError(category : String?, message: String, file: String = #file, fun
 
 class LoggerSwiftTestCase : XCTestCase {
 
-    internal func testLogging() -> Void {
+    func testLogging() {
         SRGLogError(subsystem: "ch.srgssr.logger-tests", category: "Test-Swift", message: "Error!")
         SRGLogWarning(subsystem: "ch.srgssr.logger-tests", category: "Test-Swift", message: "Warning!")
         

@@ -15,8 +15,8 @@ let package = Package(
             targets: ["SRGLogger"]
         ),
         .library(
-            name: "SRGLogger-Swift",
-            targets: ["SRGLogger-Swift"]
+            name: "SRGLoggerSwift",
+            targets: ["SRGLoggerSwift"]
         )
     ],
     targets: [
@@ -24,16 +24,16 @@ let package = Package(
             name: "SRGLogger"
         ),
         .target(
-            name: "SRGLogger-Swift",
+            name: "SRGLoggerSwift",
             dependencies: ["SRGLogger"]
         ),
         .testTarget(
-            name: "SRGLogger-tests",
+            name: "SRGLoggerTests",
             dependencies: ["SRGLogger"]
         ),
         .testTarget(
-            name: "SRGLogger-Swift-tests",
-            dependencies: ["SRGLogger-Swift"]
+            name: "SRGLoggerSwiftTests",
+            dependencies: ["SRGLoggerSwift"]
         )
     ]
 )
