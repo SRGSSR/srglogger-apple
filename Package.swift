@@ -2,6 +2,10 @@
 
 import PackageDescription
 
+struct ProjectSettings {
+    static let marketingVersion: String = "2.0.2"
+}
+
 let package = Package(
     name: "SRGLogger",
     platforms: [
@@ -21,7 +25,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SRGLogger"
+            name: "SRGLogger",
+            cSettings: [
+                .define("MARKETING_VERSION", to: "\"\(ProjectSettings.marketingVersion)\""),
+            ]
         ),
         .target(
             name: "SRGLoggerSwift",
