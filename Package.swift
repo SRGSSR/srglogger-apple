@@ -27,7 +27,7 @@ let package = Package(
         .target(
             name: "SRGLogger",
             cSettings: [
-                .define("MARKETING_VERSION", to: "\"\(ProjectSettings.marketingVersion)\""),
+                .define("MARKETING_VERSION", to: "\"\(ProjectSettings.marketingVersion)\"")
             ]
         ),
         .target(
