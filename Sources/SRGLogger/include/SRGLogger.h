@@ -8,10 +8,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-// Framework standard version number.
-FOUNDATION_EXPORT double SRGLoggerVersionNumber;
-FOUNDATION_EXPORT const unsigned char SRGLoggerVersionString[];
-
 // Oficial version number.
 FOUNDATION_EXPORT NSString *SRGLoggerMarketingVersion(void);
 
