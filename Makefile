@@ -6,13 +6,13 @@ all: test-ios test-tvos
 .PHONY: test-ios
 test-ios:
 	@echo "Running iOS unit tests..."
-	@xcodebuild test -scheme SRGLogger -destination 'platform=iOS Simulator,name=iPhone 11' 2> /dev/null
+	@xcodebuild test -scheme SRGLogger-Package -destination 'platform=iOS Simulator,name=iPhone 11' 2> /dev/null
 	@echo "... done.\n"
 
 .PHONY: test-tvos
 test-tvos:
 	@echo "Running tvOS unit tests..."
-	@xcodebuild test -scheme SRGLogger -destination 'platform=tvOS Simulator,name=Apple TV' 2> /dev/null
+	@xcodebuild test -scheme SRGLogger-Package -destination 'platform=tvOS Simulator,name=Apple TV' 2> /dev/null
 	@echo "... done.\n"
 
 .PHONY: help
