@@ -6,8 +6,6 @@
 
 #import "SRGLogger.h"
 
-#import "NSBundle+SRGLogger.h"
-
 #import <os/log.h>
 
 // DDLog levels
@@ -195,5 +193,5 @@ __attribute__((constructor)) static void SRGLoggerInit(void)
 
 NSString *SRGLoggerMarketingVersion(void)
 {
-    return NSBundle.srg_loggerBundle.infoDictionary[@"CFBundleShortVersionString"];
+    return @MARKETING_VERSION;
 }
