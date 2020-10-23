@@ -1,30 +1,24 @@
 #!/usr/bin/xcrun make -f
 
 .PHONY: all
-all:
-	@echo "Building the project..."
-	@xcodebuild build
+all: test-ios test-tvos
+
+.PHONY: test-ios
+test-ios:
+	@echo "Running iOS unit tests..."
+	@xcodebuild test -scheme SRGLogger-Package -destination 'platform=iOS Simulator,name=iPhone 11' 2> /dev/null
 	@echo "... done.\n"
 
-.PHONY: package
-package:
-	@echo "Packaging binaries..."
-	@mkdir -p archive
-	@carthage build --no-skip-current
-	@carthage archive --output archive
-	@echo "... done.\n"
-
-.PHONY: clean
-clean:
-	@echo "Cleaning up build products..."
-	@xcodebuild clean
-	@rm -rf $(CARTHAGE_FOLDER)
+.PHONY: test-tvos
+test-tvos:
+	@echo "Running tvOS unit tests..."
+	@xcodebuild test -scheme SRGLogger-Package -destination 'platform=tvOS Simulator,name=Apple TV' 2> /dev/null
 	@echo "... done.\n"
 
 .PHONY: help
 help:
 	@echo "The following targets are available:"
-	@echo "   all                         Build project dependencies and the project"
-	@echo "   package                     Build and package the framework for attaching to github releases"
-	@echo "   clean                       Clean the project and its dependencies"
-	@echo "   help                        Display this message"
+	@echo "   all                 Build and run unit tests for all platforms"
+	@echo "   test-ios            Build and run unit tests for iOS"
+	@echo "   test-tvos           Build and run unit tests for tvOS"
+	@echo "   help                Display this help message"
