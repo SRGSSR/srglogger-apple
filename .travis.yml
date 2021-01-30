@@ -1,4 +1,0 @@
-language: objective-c
-osx_image: xcode11.2
-script:
-  - bundle exec fastlane ios tests
