@@ -7,12 +7,11 @@
 import SRGLoggerSwift
 import XCTest
 
-func TestLogError(category : String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
+func TestLogError(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
     SRGLogError(subsystem: "ch.srgssr.logger-tests", category: category, message: message, file: file, function: function, line: line);
 }
 
-class LoggerSwiftTestCase : XCTestCase {
-
+class LoggerSwiftTestCase: XCTestCase 
     func testLogging() {
         SRGLogError(subsystem: "ch.srgssr.logger-tests", category: "Test-Swift", message: "Error!")
         SRGLogWarning(subsystem: "ch.srgssr.logger-tests", category: "Test-Swift", message: "Warning!")
