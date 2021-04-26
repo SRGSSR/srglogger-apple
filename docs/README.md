@@ -49,6 +49,8 @@ or in Swift:
 import SRGLoggerSwift
 ```
 
+This requires your target to link against the corresponding Swift package product.
+
 ## Logging messages
 
 To log a message, simply call the macro corresponding to the desired level. In Objective-C:
@@ -82,23 +84,23 @@ or in Swift:
 
 ```swift
 func MyAppLogVerbose(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogVerbose(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogVerbose(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 
 func MyAppLogDebug(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogDebug(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogDebug(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 
 func MyAppLogInfo(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogInfo(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogInfo(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 
 func MyAppLogWarning(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogWarning(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogWarning(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 
 func MyAppLogError(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogError(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogError(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 ```
 
