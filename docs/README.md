@@ -131,7 +131,7 @@ Logging can be performed from any thread.
 If you are using Apple unified logging and do not see the logs:
 
 1. Check that the scheme you use does not have the `OS_ACTIVITY_MODE` environment variable set to `disable`, or `OS_ACTIVITY_DT_MODE` set to `NO`.
-1. If you do not see lower level logs in the `Console.app`, ensure that the items _Include Info Messages_ and `Include Debug Messages` are checked in the console `Action` menu. If these options are grayed out, try updating the logging configuration for your subsystem first by running the following command from a terminal:
+1. If you do not see lower level logs in the `Console.app`, ensure that the items _Include Info Messages_ and _Include Debug Messages_ are checked in the console `Action` menu. If these options are grayed out, try updating the logging configuration for your subsystem first by running the following command from a terminal:
 
 	```
 	$ sudo log config --mode "level:debug" --subsystem <subsystem>
