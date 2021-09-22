@@ -3,7 +3,7 @@
 import PackageDescription
 
 struct ProjectSettings {
-    static let marketingVersion: String = "3.0.1"
+    static let marketingVersion: String = "3.0.2"
 }
 
 let package = Package(
@@ -33,10 +33,7 @@ let package = Package(
         ),
         .target(
             name: "SRGLoggerSwift",
-            dependencies: ["SRGLogger"],
-            cSettings: [
-                .define("NS_BLOCK_ASSERTIONS", to: "1", .when(configuration: .release))
-            ]
+            dependencies: ["SRGLogger"]
         ),
         .testTarget(
             name: "SRGLoggerTests",

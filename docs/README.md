@@ -1,6 +1,6 @@
 [![SRG Logger logo](README-images/logo.png)](https://github.com/SRGSSR/srglogger-apple)
 
-[![GitHub releases](https://img.shields.io/github/v/release/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/releases) [![platform](https://img.shields.io/badge/platfom-ios%20%7C%20tvos%20%7C%20watchos-blue)](https://github.com/SRGSSR/srglogger-apple) [![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager) [![Build Status](https://travis-ci.org/SRGSSR/srglogger-apple.svg?branch=master)](https://travis-ci.org/SRGSSR/srglogger-apple/branches) [![GitHub license](https://img.shields.io/github/license/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/blob/master/LICENSE)
+[![GitHub releases](https://img.shields.io/github/v/release/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/releases) [![platform](https://img.shields.io/badge/platfom-ios%20%7C%20tvos%20%7C%20watchos-blue)](https://github.com/SRGSSR/srglogger-apple) [![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager) [![GitHub license](https://img.shields.io/github/license/SRGSSR/srglogger-apple)](https://github.com/SRGSSR/srglogger-apple/blob/master/LICENSE)
 
 ## About
 
@@ -49,6 +49,8 @@ or in Swift:
 import SRGLoggerSwift
 ```
 
+This requires your target to link against the corresponding Swift package product.
+
 ## Logging messages
 
 To log a message, simply call the macro corresponding to the desired level. In Objective-C:
@@ -82,23 +84,23 @@ or in Swift:
 
 ```swift
 func MyAppLogVerbose(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogVerbose(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogVerbose(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 
 func MyAppLogDebug(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogDebug(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogDebug(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 
 func MyAppLogInfo(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogInfo(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogInfo(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 
 func MyAppLogWarning(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogWarning(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogWarning(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 
 func MyAppLogError(category: String?, message: String, file: String = #file, function: String = #function, line: UInt = #line) {
-    SRGLogError(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line);
+    SRGLogError(subsystem: "com.myapp", category: category, message: message, file: file, function: function, line: line)
 }
 ```
 
@@ -129,7 +131,7 @@ Logging can be performed from any thread.
 If you are using Apple unified logging and do not see the logs:
 
 1. Check that the scheme you use does not have the `OS_ACTIVITY_MODE` environment variable set to `disable`, or `OS_ACTIVITY_DT_MODE` set to `NO`.
-1. If you do not see lower level logs in the `Console.app`, ensure that the items _Include Info Messages_ and `Include Debug Messages` are checked in the console `Action` menu. If these options are grayed out, try updating the logging configuration for your subsystem first by running the following command from a terminal:
+1. If you do not see lower level logs in the `Console.app`, ensure that the items _Include Info Messages_ and _Include Debug Messages_ are checked in the console `Action` menu. If these options are grayed out, try updating the logging configuration for your subsystem first by running the following command from a terminal:
 
 	```
 	$ sudo log config --mode "level:debug" --subsystem <subsystem>
