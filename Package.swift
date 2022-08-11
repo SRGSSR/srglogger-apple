@@ -3,13 +3,13 @@
 import PackageDescription
 
 struct ProjectSettings {
-    static let marketingVersion: String = "3.0.2"
+    static let marketingVersion: String = "3.1.0"
 }
 
 let package = Package(
     name: "SRGLogger",
     platforms: [
-        .iOS(.v9),
+        .iOS(.v12),
         .tvOS(.v12),
         .watchOS(.v5)
     ],
